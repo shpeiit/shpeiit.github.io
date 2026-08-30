@@ -1,0 +1,33 @@
+.CollapsibleSectionBtn svg {
+    width: 1.1em;
+    height: 0.7em;
+
+    margin-right: 0.5em;
+
+    transition: transform 0.3s ease;
+
+    stroke: var(--primary-color-fonted);
+    stroke-width: 8;
+}
+
+.CollapsibleSectionBtn {
+    padding-right: 0.5rem;
+    cursor: pointer;
+}
+
+.CollapsibleSectionContent {
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+
+    interpolate-size: allow-keywords;
+    transition: height 0.3s ease;
+}
+
+.CollapsibleSectionOpen > .CollapsibleSectionContent {
+    height: fit-content;
+}
+
+.CollapsibleSectionOpen > .CollapsibleSectionBtn svg {
+    transform: rotate(90deg);
+}

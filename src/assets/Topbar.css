@@ -1,0 +1,179 @@
+nav {
+    height: var(--topbar-height, 2em);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    
+    z-index: 1000;
+
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+nav > .LogoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-left: 1em;
+    padding-right: 2em;
+}
+
+/* buttons container */
+nav > .ButtonsContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    min-width: 0;
+    flex-shrink: 1;
+
+    height: 100%;
+    padding-right: 1em;
+}
+
+.ButtonsContainer > .selected, nav .Menu > div.selected {
+    font-weight: 600;
+    border-color: white;
+}
+.ButtonsContainer > div, nav .Menu > div {
+    border: var(--secondary-color) solid 2px;
+    border-radius: 0.5em;
+    scale: 0.95;
+    font-weight: default;
+    color: white;
+    padding: 0.5em 0;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 1;
+    overflow: hidden;
+    height: 1.2em;
+
+    interpolate-size: allow-keywords;
+    transition: background-color 0.3s ease, scale 0.3s ease, font-weight 0.3s ease;
+}
+.ButtonsContainer > div:hover, nav .Menu > div:hover {
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    scale: 1;
+    font-weight: 600;
+}
+.ButtonsContainer > div:active, nav .Menu > div:active {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    scale: 0.92;
+}
+
+.ButtonsContainer a, nav .Menu > div a {
+    padding: 0.5em 0.6em;
+
+    text-decoration: none;
+    color: inherit !important;
+    font-weight: inherit;
+
+    font-size: 1.2em;
+    text-wrap: nowrap;
+
+    width: 100%;
+}
+
+
+/* Sandwich menu */
+nav > .MenuContainer {
+    border: none;
+    margin: 0.8em 1em;
+
+    stroke: white;
+    stroke-width: 10;
+    
+    height: auto;
+    width: 100%;
+
+    display: flex;
+    justify-content: right;
+}
+nav > .MenuContainer > .MenuBtn {
+    transform: scale(0.9);
+}
+
+nav > .MenuContainer > .MenuBtn > svg {
+    height: 100%;
+    width: auto;
+}
+
+nav > .MenuContainer > .MenuBtn:hover {
+    cursor: pointer;
+    transform: scale(1);
+}
+nav > .MenuContainer > .MenuBtn:active {
+    transform: scale(0.85);
+}
+
+nav > .MenuContainer > .Menu {
+    position: absolute;
+    top: var(--topbar-height);
+
+    right: 0;
+    width: 100%;
+    max-width: 15em;
+    height: calc(100vh - var(--topbar-height));
+
+    
+    background-color: var(--primary-color);
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+    transform: translateX(100%);
+    opacity: 0.5;
+
+    z-index: 1000;
+}
+nav > .MenuContainer.MenuOpen > .Menu {
+    transform: translateX(0);
+    opacity: 1;
+}
+nav > .MenuContainer > .Menu > div {
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+}
+
+nav .Menu > div {
+    width: 90%;
+    text-align: center;
+    margin: 0.1em 0;
+}
+
+nav > .MenuContainer > .MenuBackground {
+    position: absolute;
+    top: var(--topbar-height);
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - var(--topbar-height));
+    
+    background-image: linear-gradient(to right, var(--primary-color) 60%, var(--secondary-color-fonted));
+
+    transition: opacity 0.3s ease;
+
+    opacity: 0;
+    pointer-events: none;
+
+    z-index: 999;
+}
+nav > .MenuContainer.MenuOpen > .MenuBackground {
+    opacity: 0.8;
+    pointer-events: auto;
+}

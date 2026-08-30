@@ -1,0 +1,10 @@
+
+.cite::after {
+  content: "  " attr(data-cite) " (source)";
+  font-size: 0.8rem;
+  color: var(--link-color);
+}
+.cite:hover::after {
+  cursor: pointer;
+  text-decoration: underline;
+}

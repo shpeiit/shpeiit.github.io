@@ -1,0 +1,122 @@
+:root {
+  color-scheme: light dark;
+  
+  --primary-color: rgb(0, 31, 91);
+  --secondary-color: rgb(212, 63, 39);
+
+  --primary-color-fonted: light-dark(var(--l-primary-color-fonted), var(--d-primary-color-fonted));
+  --l-primary-color-fonted: rgb(0, 31, 91);
+  --d-primary-color-fonted: rgb(31, 71, 190);
+
+  --secondary-color-fonted: light-dark(var(--l-secondary-color-fonted), var(--d-secondary-color-fonted));
+  --l-secondary-color-fonted: rgb(212, 63, 39);
+  --d-secondary-color-fonted: rgb(255, 85, 60);
+
+  --link-color: light-dark(var(--l-link-color), var(--d-link-color));
+  --l-link-color: rgb(0, 98, 159);
+  --d-link-color: rgb(31, 71, 190);
+
+  --link-hover-color: light-dark(var(--l-link-hover-color), var(--d-link-hover-color));
+  --l-link-hover-color: rgb(45, 117, 146);
+  --d-link-hover-color: rgb(65, 97, 192);
+
+  --link-visited-color: light-dark(var(--l-link-visited-color), var(--d-link-visited-color));
+  --l-link-visited-color: rgb(118, 0, 129);
+  --d-link-visited-color: rgb(148, 31, 190);
+
+  --background-color: light-dark(var(--l-background-color), var(--d-background-color));
+  --l-background-color: rgb(255, 255, 255);
+  --d-background-color: rgb(26, 26, 26);
+
+  --shadow-color: light-dark(var(--l-shadow-color), var(--d-shadow-color));
+  --l-shadow-color: rgba(0, 0, 0, 0.5);
+  --d-shadow-color: rgba(255, 255, 255, 0.5);
+
+  --bronze-color: rgb(189, 101, 60);
+  --gold-color: rgb(212, 175, 55);
+  --silver-color: rgb(158, 158, 158);
+
+  font-family: 'Inter', sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100%;
+  width: 100%;
+
+  background-color: var(--background-color);
+  min-height: 100vh;
+  
+  display: flex;
+  flex-direction: column;
+
+  text-wrap: pretty;
+}
+
+.contentWrapper {
+  width: 100%;
+  
+  margin-top: var(--topbar-height);
+
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  height: calc(100vh - var(--topbar-height));
+}
+
+.content {
+  padding: 1rem;
+}
+
+.content h2 {
+  color: var(--primary-color-fonted);
+}
+
+.spacer {
+  max-height: 100vh;
+  flex-grow: 1;
+}
+
+.not-draggable {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+.unselectable {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+a {
+  color: var(--link-color);
+}
+a:hover:visited, a:hover {
+  color: var(--link-hover-color);
+}
+a:active:visited, a:active {
+  color: var(--link-color);
+}
+a:visited {
+  color: var(--link-visited-color);
+}
+
+button {
+  border: none;
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
