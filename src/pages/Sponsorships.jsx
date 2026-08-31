@@ -40,6 +40,7 @@ function Sponsorships() {
 
                 <div className="sponsorshipTiers">
                     <h2>Sponsorship Tiers</h2>
+                    <p>Click on a tier to learn more</p>
                     <CollapsibleSection style={{color: "var(--bronze-color)"}} text="Bronze">
                         <p>$500 / year</p>
                         <ul>
@@ -72,13 +73,14 @@ function Sponsorships() {
                 </div>
                 <div>
                     <h2>Donation Match</h2>
-                    <Cite link="https://shpe.org/support/matching-gifts/">
+                    <Cite link="https://shpe.org/support/matching-gifts/" linkText="Matching Gifts Program (Nationals)">
                         <p>
                             You or your spouse may work for a company or serve on a corporate board with a matching gifts program. 
                             Donors who work for such a company can double or sometimes triple their contribution. 
                             Please contact your human resources office to determine if your company has a matching gifts program and 
                             how you can leverage your gift to benefit the mission of SHPE.
                         </p>
+                        <span>More Info (Takes you out of this website): </span>
                     </Cite>
                 </div>
 

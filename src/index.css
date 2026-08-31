@@ -71,6 +71,9 @@ html, body {
 
 .content {
   padding: 1rem;
+  max-width: 1000px;
+
+  margin: 0 auto;
 }
 
 .content h2 {
@@ -119,4 +122,8 @@ button {
   font: inherit;
   color: inherit;
   cursor: pointer;
+}
+
+.bolded {
+  font-weight: bold;
 }

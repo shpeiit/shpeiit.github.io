@@ -1,13 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './PageHeader.css';
 
 function PageHeader({ title, subtitle, subtitle2, image }) {
     const tempImage = new Image();
     tempImage.src = image;
     const [imageAspectRatio, setImageAspectRatio] = useState(1);
-    tempImage.onload = () => {
-        setImageAspectRatio(tempImage.width / tempImage.height);
-    }
+    useEffect(() => {
+        const tempImage = new Image();
+        tempImage.src = image;
+        tempImage.onload = () => {
+            setImageAspectRatio(tempImage.width / tempImage.height);
+        }
+    }, [image]);
 
     return <div className="PageHeader unselectable not-draggable">
         <h1>{title}</h1>

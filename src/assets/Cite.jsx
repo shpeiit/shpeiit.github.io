@@ -1,11 +1,14 @@
 import './Cite.css';
 import LinkElem from './LinkElem';
 
-function Cite({link, ...props}) {
+function Cite({link, linkText, ...props}) {
+  if (!linkText) {
+    linkText = link;
+  }
   return (
     <span>
         {props.children}
-        <LinkElem link={link} target="_blank">{link}</LinkElem>
+        <LinkElem link={link} target="_blank">{linkText}</LinkElem>
     </span>
   );
 }

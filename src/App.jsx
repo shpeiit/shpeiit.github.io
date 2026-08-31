@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Routes, Route } from "react-router";
+import { useState, useRef, useEffect } from 'react';
+import { Routes, Route, useLocation } from "react-router";
 
 
 import Home from './pages/Home';
@@ -11,10 +11,17 @@ import './App.css';
 function App() {
   const topbarHeight = 4; // em
 
+  const location = useLocation();
+  const contentWrapperRef = useRef(null);
+  useEffect(() => {
+    contentWrapperRef.current?.scrollTo({ top: 0, behavior: "instant" });
+  }, [location.pathname]);
+
+
   return (
     <>
       <Topbar height={topbarHeight} />
-      <div className="contentWrapper" style={{ '--topbar-height': `${topbarHeight}em` }}>
+      <div className="contentWrapper" ref={contentWrapperRef} style={{ '--topbar-height': `${topbarHeight}em` }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sponsorships" element={<Sponsorships />} />
