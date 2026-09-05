@@ -6,6 +6,7 @@ import Sponsor from '../assets/Sponsor';
 import CollapsibleSection from '../assets/CollapsibleSection';
 import './Sponsorships.css';
 
+const sponsorshipFormLink = "https://forms.gle/UDWuHisuumWEHQMu9";
 const donationLink = "https://secure.touchnet.com/C20090_ustores/web/product_detail.jsp?PRODUCTID=1860&SINGLESTORE=true";
 
 const sponsors = [
@@ -87,7 +88,8 @@ function Sponsorships() {
                 <div className="fullWidth">
                     <h2>Become a Sponsor</h2>
                     <div className="sponsorButtons unselectable">
-                        <CustomButton link={donationLink} target="_blank">Donate to SHPE IIT</CustomButton>
+                        <CustomButton link={sponsorshipFormLink} target="_blank">Become a Sponsor</CustomButton>
+                        <CustomButton link={donationLink} target="_blank">Donate Directly to SHPE IIT</CustomButton>
                     </div>
                 </div>
                 

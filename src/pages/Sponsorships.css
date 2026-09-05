@@ -37,10 +37,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+
+    gap: 1rem;
 }
 
 .sponsorButtons > div {
-    padding: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     border-radius: 0.5rem;
     border: 1px solid var(--primary-color);
     background-color: var(--primary-color);

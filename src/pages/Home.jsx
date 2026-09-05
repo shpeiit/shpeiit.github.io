@@ -4,6 +4,7 @@ import CustomButton from '../assets/Buttons';
 import CollapsibleSection from '../assets/CollapsibleSection';
 import './Home.css';
 
+const sponsorshipFormLink = "https://forms.gle/UDWuHisuumWEHQMu9";
 const donationLink = "https://secure.touchnet.com/C20090_ustores/web/product_detail.jsp?PRODUCTID=1860&SINGLESTORE=true";
 
 function Home() {
@@ -43,7 +44,8 @@ function Home() {
                     </p>
 
                     <div className="AboutUsButtons unselectable">
-                        <CustomButton link={donationLink} target="_blank">Donate to SHPE IIT</CustomButton>
+                        <CustomButton link={sponsorshipFormLink} target="_blank">Become a Sponsor</CustomButton>
+                        <CustomButton link={donationLink} target="_blank">Donate Directly to SHPE IIT</CustomButton>
                     </div>
 
                     <CollapsibleSection text="SHPE IIT History (Click to Expand)">

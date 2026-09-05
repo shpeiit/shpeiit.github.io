@@ -6,6 +6,10 @@
 .AboutUsButtons {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+
     gap: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
