@@ -1,0 +1,112 @@
+
+.execCard {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto auto auto;
+
+    background-color: var(--background-color);
+    color: white;
+    border-radius: 10px;
+
+    max-width: 400px;
+
+    border-radius: 10px;
+    border: 2px solid var(--primary-color-fonted);
+    box-shadow: 0px 0px 10px var(--shadow-color);
+
+    text-align: center;
+}
+.execCard.empty {
+    opacity: 0.5;
+    scale: 0.7;
+}
+
+.execCard.empty h3 {
+    /* make exec position larger */
+    font-size: 1.5rem;
+}
+.execCard.empty img {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+}
+
+.execCard .imageContainer {
+    height: 300px;
+    width: 100%;
+
+    border-radius: 10px 10px 0 0;
+
+    grid-column: 1 / span 1;
+    align-self: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    background-color: var(--accent-bg-color);
+}
+
+.execCard img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.execCard h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    margin-top: 5px;
+    margin-bottom: 0;
+
+    color: var(--secondary-color-fonted);
+}
+.execCard h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    margin-top: 5px;
+    margin-bottom: 0px;
+
+    color: var(--primary-color-fonted);
+}
+.execCard a {
+    color: inherit !important;
+    text-decoration: none;
+}
+
+.execCard p {
+    font-size: 0.7rem;
+    font-weight: 400;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    font-style: italic;
+}
+
+.execCard p.socials {
+    margin-top: 5px;
+
+    height: 35px;
+}
+
+.execCard p.socials img {
+    height: 30px;
+    width: 30px;
+
+    border: none;
+    border-radius: 100%;
+    margin: 0 5px;
+}
+
+.execCard p.socials img {
+    transform: scale(0.95);
+}
+.execCard p.socials img:hover {
+    transform: scale(1);
+}
+.execCard p.socials img:active {
+    transform: scale(0.9);
+}

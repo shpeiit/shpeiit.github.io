@@ -1,0 +1,46 @@
+
+.resourcesLinks {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.resourcesLinks div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-grow: 1;
+    max-width: 300px;
+
+    background-color: var(--primary-color);
+    border-radius: 5px;
+
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+
+    box-shadow: 0 2px 4px var(--shadow-color);
+
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.resourcesLinks div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+.resourcesLinks div:active {
+    transform: scale(0.95);
+    box-shadow: 0 1px 2px var(--shadow-color);
+}
+
+.resourcesLinks a {
+    color: inherit !important;
+    text-decoration: none;
+
+    padding: 0.5rem 2rem;
+    transition: padding 0.3s ease;
+}

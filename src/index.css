@@ -28,6 +28,14 @@
   --l-background-color: rgb(255, 255, 255);
   --d-background-color: rgb(26, 26, 26);
 
+  --accent-bg-color: light-dark(var(--l-accent-bg-color), var(--d-accent-bg-color));
+  --l-accent-bg-color: rgb(203, 203, 203);
+  --d-accent-bg-color: rgb(53, 53, 53);
+
+  --font-color: light-dark(var(--l-font-color), var(--d-font-color));
+  --l-font-color: rgb(0, 0, 0);
+  --d-font-color: rgb(255, 255, 255);
+
   --shadow-color: light-dark(var(--l-shadow-color), var(--d-shadow-color));
   --l-shadow-color: rgba(0, 0, 0, 0.5);
   --d-shadow-color: rgba(255, 255, 255, 0.5);

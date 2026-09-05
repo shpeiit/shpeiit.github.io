@@ -4,6 +4,10 @@ import { Routes, Route, useLocation } from "react-router";
 
 import Home from './pages/Home';
 import Sponsorships from './pages/Sponsorships';
+import ExecutiveBoard from './pages/ExecutiveBoard';
+import Resources from './pages/Resources';
+import Events from './pages/Events';
+
 import Topbar from './assets/Topbar';
 import Footer from './assets/Footer';
 import './App.css';
@@ -25,6 +29,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sponsorships" element={<Sponsorships />} />
+          <Route path="/executive-board" element={<ExecutiveBoard />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/events" element={<Events />} />
         </Routes>
         <div className="spacer"></div>
         <Footer />

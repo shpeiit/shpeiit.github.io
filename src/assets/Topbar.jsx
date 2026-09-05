@@ -7,7 +7,7 @@ import './Topbar.css';
 // key = Text, value = {icon, iconLeft, link}
 const links = {
     Home: {
-        icon: "shpe-emblem.png",
+        icon: "/shpe-emblem.png",
         iconLeft: true,
         link: "/"
     }, 

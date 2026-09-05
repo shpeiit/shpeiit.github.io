@@ -1,0 +1,29 @@
+
+.executiveBoard .CollapsibleSection {
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--primary-color-fonted);
+}
+
+.executiveBoard .CollapsibleSection .membersContainer {
+    display: flex;
+    flex-wrap: wrap balance;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 0 1rem 1rem;
+
+    align-items: stretch;
+    flex-basis: 100%;
+
+    color: var(--font-color);
+
+    --col-count: 3;
+}
+
+.executiveBoard .CollapsibleSection .membersContainer > .execCard {
+    flex: 1 1 calc((100% / var(--col-count)) - 1rem);
+    /*max-width: calc((100% / var(--col-count)) - 1rem);*/
+    min-width: 200px;
+}

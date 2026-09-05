@@ -10,18 +10,12 @@ const sponsorshipFormLink = "https://forms.gle/UDWuHisuumWEHQMu9";
 const donationLink = "https://secure.touchnet.com/C20090_ustores/web/product_detail.jsp?PRODUCTID=1860&SINGLESTORE=true";
 
 const sponsors = [
-    {
-        name: "Blachford",
-        logo: "blachfordLogo.png",
-        website: "https://blachford.com/",
-        type: "gold"
-    },
-    {
-        name: "UL Solutions",
-        logo: "ulLogo.png",
-        website: "https://www.ul.com/",
-        type: "silver"
-    }
+/*
+    name:
+    logo:
+    website:
+    type:
+*/
 ]
 
 function Sponsorships() {
@@ -93,6 +87,7 @@ function Sponsorships() {
                     </div>
                 </div>
                 
+                {sponsors.length > 0 && 
                 <div className="fullWidth">
                     <h2>Current Sponsors</h2>
                     <div className="sponsorList">
@@ -100,7 +95,7 @@ function Sponsorships() {
                             <Sponsor key={sponsor.name} name={sponsor.name} logo={sponsor.logo} website={sponsor.website} type={sponsor.type} />
                         ))}
                     </div>
-                </div>
+                </div>}
                 
                 <div className="fullWidth">
                     <h2>Full SHPE Sponsorship Package</h2>
