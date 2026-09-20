@@ -1,0 +1,17 @@
+
+.eventsList {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+}
+
+.eventsList .eventCardWrapper {
+    display: inline-block;
+    width: fit-content;
+
+    margin-bottom: -6px;
+}

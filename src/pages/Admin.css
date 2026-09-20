@@ -1,0 +1,173 @@
+
+.admin .eventForm {
+    margin: 20px 0;
+    padding: 20px;
+    border: 2px solid var(--primary-color-fonted);
+    border-radius: 8px;
+}
+
+.admin .eventForm label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.admin .eventForm .avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid var(--primary-color-fonted);
+}
+
+.admin .eventForm .signedInAs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.admin .eventForm .googleSignIn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.admin .eventForm .fieldset { 
+    border: none;
+    padding: 0;
+    margin: 0 0 18px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin .eventForm .field {
+    width: 100%;
+    margin-bottom: 18px;
+}
+.admin .eventForm .label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 0 0 6px;
+    color: var(--primary-color-fonted);
+}
+.admin .eventForm input {
+    width: calc(100% - 24px);
+    padding: 10px 12px;
+    border: 1px solid var(--primary-color-fonted);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    &:hover:not(:invalid) {
+        outline: none;
+        border-color: var(--font-color);
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    }
+    &:invalid {
+        border-color: var(--secondary-color-fonted);
+    }
+    &:required {
+        border-width: 2px;
+    }
+
+    &[type="checkbox"] {
+        width: auto;
+    }
+}
+.admin .eventForm textarea {
+    width: calc(100% - 24px);
+    min-height: 90px;
+    padding: 10px 12px;
+    border: 1px solid var(--primary-color-fonted);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    resize: vertical;
+    &:hover:not(:invalid) {
+        outline: none;
+        border-color: var(--font-color);
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    }
+    &:invalid {
+        border-color: var(--secondary-color-fonted);
+    }
+    &:required {
+        border-width: 2px;
+    }
+}
+.admin .eventForm .hint {
+    font-size: 0.78rem;
+    color: var(--primary-color-fonted);
+    opacity: 0.8;
+    margin-top: -2px;
+    margin-bottom: 14px;
+}
+
+.admin .eventPreview {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.admin .eventPreview .eventCard {
+    opacity: 0.6;
+    margin-top: 1px;
+}
+
+.admin .eventForm .button {
+    width: 100%;
+    padding: 11px 16px;
+    background: #2f5d50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transform: scale(0.98);
+
+    transition: transform 0.1s ease-in-out, background 0.1s ease-in-out;
+}
+.admin .eventForm .button:not(.buttonDisabled):hover {
+    background: #376f5f;
+    transform: scale(1);
+}
+.admin .eventForm .button:not(.buttonDisabled):active {
+    background: #295246;
+    transform: scale(0.95);
+}
+.admin .eventForm .buttonDisabled {
+    opacity: 0.5;
+    color: white;
+    cursor: not-allowed;
+    transform: scale(1);
+}
+.admin .eventForm .status {
+    margin-top: 16px;
+    font-size: 0.88rem;
+    padding: 10px 12px;
+    border-radius: 6px;
+}
+.admin .eventForm .status_error {
+    background: #fbeceb;
+    color: #b3261e;
+    border: 1px solid #f2c6c3;
+}
+.admin .eventForm .status_success {
+    background: #eaf5ef;
+    color: #1f6f4a;
+    border: 1px solid #c3e3d2;
+}
+.admin .eventForm .status_pending {
+    background: #f1f3f5;
+    color: #5b6470;
+    border: 1px solid #d9dee3;
+}

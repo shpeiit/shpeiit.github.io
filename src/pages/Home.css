@@ -3,6 +3,25 @@
     margin: 20px 0;
 }
 
+.upcomingEventsSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.upcomingEventsSection h2 { 
+    margin-bottom: 0px;
+    align-self: flex-start;
+}
+.upcomingEventsSection .eventsList {
+    justify-content: center;
+}
+
+.upcomingEventsSection .CustomButton {
+    width: fit-content;
+    margin-top: 10px;
+}
+
 .AboutUsButtons {
     display: flex;
     justify-content: center;
@@ -15,7 +34,7 @@
     margin-bottom: 20px;
 }
 
-.AboutUsButtons > div {
+.AboutUsButtons > div, .upcomingEventsSection .CustomButton {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,16 +50,16 @@
 
     transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
-.AboutUsButtons > div:hover {
+.AboutUsButtons > div:hover, .upcomingEventsSection .CustomButton:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px var(--shadow-color);
 }
-.AboutUsButtons > div:active {
+.AboutUsButtons > div:active, .upcomingEventsSection .CustomButton:active {
     transform: scale(0.95);
     box-shadow: 0 1px 2px var(--shadow-color);
 }
 
-.AboutUsButtons > div > a {
+.AboutUsButtons > div > a, .upcomingEventsSection .CustomButton > a {
     padding: 0.5rem 1rem;
     color: inherit ! important;
     text-decoration: none;

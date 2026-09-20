@@ -1,0 +1,165 @@
+
+.eventCard {
+    border-radius: 8px;
+    margin: 16px 0;
+    background-color: var(--background-color);
+    border: 2px solid var(--shadow-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    width: 250px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    transition: box-shadow 0.1s ease, transform 0.1s ease;
+}
+.eventCard.canHover:hover {
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transform: translate(0, -2px);
+    cursor: pointer;
+}
+.eventCard.canHover:active {
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transform: translate(0, 0);
+}
+
+.eventCard .thumbnailContainer {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    align-self: center;
+    border: hidden;
+
+    max-height: 100px;
+    min-height: 70px;
+    overflow: hidden;
+
+    background-color: var(--secondary-color);
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.eventCard .eventType {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    justify-self: left;
+
+    width: max-content;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: var(--accent-bg-color);
+
+    padding-bottom: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom: 2px solid var(--shadow-color);
+    border-right: 2px solid var(--shadow-color);
+}
+
+.eventCard .thumbnail {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    height: auto;
+    display: block;
+
+    min-height: 70px;
+
+    background-image: var(--lowres);
+    background-size: cover;
+    background-position: center;
+}
+
+.eventCard .eventContent {
+    margin: 8px 16px;
+    width: calc(100% - 32px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.eventCard h2 {
+    margin: 0 0 5px 0;
+    padding: 0;
+    font-size: 1.2em;
+}
+
+.eventCard p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9em;
+    width: 100%;
+}
+
+.eventCard .dataContainer {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+.eventCard .symbol {
+    margin-right: 4px;
+    margin-left: -4px;
+    display: inline-block;
+    font-style: normal;
+    font-size: 1em;
+
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.eventCard .eventCollaborators {
+    font-style: italic;
+}
+
+.eventCard .eventFoodProvided {
+    font-size: 0.85em;
+    font-style: italic;
+}
+
+.eventCard .eventButton {
+    background-color: var(--primary-color);
+    align-self: center;
+    margin-top: 5px;
+    padding: 6px 16px;
+    border-radius: 4px;
+    color: white;
+    font-size: 1.1em;
+
+    --brightness: 1;
+    filter: brightness(var(--brightness));
+    -webkit-filter: brightness(var(--brightness));
+    -moz-filter: brightness(var(--brightness));
+    -o-filter: brightness(var(--brightness));
+    -ms-filter: brightness(var(--brightness));
+    & span.arrow {
+        display: inline-block;
+        transition: transform 0.1s ease;
+    }
+}
+.eventCard.canHover:hover .eventButton {
+    --brightness: 1.2;
+
+    & span.arrow {
+        transform: translate(4px, 0) scale(1.1);
+    }
+}
+.eventCard.canHover:active .eventButton {
+    --brightness: 0.9;
+
+    & span.arrow {
+        transform: translate(0, 0) scale(1.1);
+    }
+}

@@ -2,20 +2,27 @@ import PageHeader from '../assets/PageHeader';
 import LinkElem from '../assets/LinkElem';
 import CustomButton from '../assets/Buttons';
 import CollapsibleSection from '../assets/CollapsibleSection';
+import EventsList from '../assets/EventsList';
 import './Home.css';
 
 const sponsorshipFormLink = "https://forms.gle/UDWuHisuumWEHQMu9";
 const donationLink = "https://secure.touchnet.com/C20090_ustores/web/product_detail.jsp?PRODUCTID=1860&SINGLESTORE=true";
 
-function Home() {
+function Home({ events }) {
+    let upcomingEvents = Object.values(events).filter(event => new Date(event.endTime) >= new Date());
+    upcomingEvents.sort((a, b) => new Date(a.startTime) - new Date(b.startTime));
+    upcomingEvents = upcomingEvents.slice(0, 3);
+
     return (
         <div className="home">
             <PageHeader title="Society of Hispanic Professional Engineers" subtitle="At Illinois Institute of Technology" subtitle2="Welcome to SHPE IIT!" image="iitcampus.webp" />
 
             <div className="content">
-                <p>
-                    Upcoming events section (WIP)
-                </p>
+                <div className="upcomingEventsSection">
+                    <h2>Upcoming Events</h2>
+                    <EventsList events={upcomingEvents} />
+                    <CustomButton link="/events">View All Events</CustomButton>
+                </div>
 
                 <div className="section">
                     <h2>About Us</h2>
