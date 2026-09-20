@@ -1,0 +1,21 @@
+
+.calendar {
+    display: grid;
+    justify-items: center;
+    margin: 20px 0;
+}
+
+.calendar-download {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.calendar iframe {
+    width: 90%;
+    height: 600px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+}

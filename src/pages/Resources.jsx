@@ -1,5 +1,7 @@
 import PageHeader from '../assets/PageHeader';
 import LinkElem from '../assets/LinkElem';
+import CollapsibleSection from '../assets/CollapsibleSection';
+import Calendar from '../assets/Calendar';
 
 import './Resources.css';
 
@@ -8,15 +10,22 @@ function Resources() {
         <div className="resources">
             <PageHeader title="Resources" subtitle="Resources for SHPE IIT members & students" />
             <div className="content">
-                <h2>
-                    SHPE IIT Resources (WIP)
-                </h2>
+                <h2>SHPE IIT Resources (WIP)</h2>
                 <p>
-                    Previous GBM slides & study hours here (WIP) & link to events page.
+                    Information about study hours and general body meeting slides can be found here. As well as
+                    the events calendar (below).
                 </p>
-                <h2>
-                    SHPE National Resources
-                </h2>
+                <p>For specific events information, check out our <LinkElem to="/events">events page</LinkElem>.</p>
+                <p>
+                    Previous GBM slides (WIP).
+                </p>
+                
+                <h3> SHPE IIT Calendar (Events & study hours) </h3>
+                <CollapsibleSection text="Click to open/close">
+                    <Calendar />
+                </CollapsibleSection>
+                
+                <h2>SHPE National Resources</h2>
                 <p>
                     We're proud to be part of the wider SHPE familia! Below you'll find links to resources from the SHPE 
                     National website that can help you grow personally and professionally. From scholarships and career 
