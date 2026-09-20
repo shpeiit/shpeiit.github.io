@@ -1,4 +1,9 @@
 
+.resources h3 {
+    color: var(--primary-color-fonted);
+    font-size: 1.3rem;
+}
+
 .resourcesLinks {
     display: flex;
     align-items: stretch;
@@ -26,7 +31,7 @@
 
     box-shadow: 0 2px 4px var(--shadow-color);
 
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 .resourcesLinks div:hover {
     transform: scale(1.05);

@@ -58,7 +58,7 @@ nav > .ButtonsContainer {
     height: 1.2em;
 
     interpolate-size: allow-keywords;
-    transition: background-color 0.3s ease, scale 0.3s ease, font-weight 0.3s ease;
+    transition: background-color 0.1s ease, scale 0.1s ease, font-weight 0.1s ease;
 }
 .ButtonsContainer > div:hover, nav .Menu > div:hover {
     background-color: var(--secondary-color);

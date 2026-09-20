@@ -29,7 +29,7 @@
 
     box-shadow: 0 2px 4px var(--shadow-color);
 
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 .AboutUsButtons > div:hover {
     transform: scale(1.05);
