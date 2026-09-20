@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import PageHeader from '../assets/PageHeader';
 import CollapsibleSection from '../assets/CollapsibleSection';
 import EventCard from '../assets/EventCard';
+import EventsList from '../assets/EventsList';
 
 import './Admin.css';
 
@@ -18,9 +19,16 @@ function AdminSubmissionForm({ events }) {
     const idTokenRef = useRef(null);
 
     const [user, setUser] = useState(null); // { email, picture }
-    const [form, setForm] = useState({ name: '', eventType: '', location: '', startTime: '', endTime: '', description: '', thumbnailImageData: null });
+    const [form, setForm] = useState({ 
+        name: '', eventType: '', location: '', startTime: '', 
+        endTime: '', description: '', thumbnailImageData: null, 
+        foodProvided: false, collaborators: '' 
+    });
     const [status, setStatus] = useState({ type: null, message: '' });
     const [submitting, setSubmitting] = useState(false);
+
+    const [onEventCardClick, setOnEventCardClick] = useState(undefined);
+    const [currentlyEditing, setCurrentlyEditing] = useState(null);
 
     const handleCredentialResponse = useCallback((response) => {
         idTokenRef.current = response.credential;
@@ -36,7 +44,35 @@ function AdminSubmissionForm({ events }) {
 
         setUser({ email: payload.email, picture: payload.picture });
         setStatus({ type: null, message: '' });
+
+        setOnEventCardClick(() => ({id, title, type, location, 
+            startTime, endTime, description, thumbnailImageData, 
+            foodProvided, collaborators
+        }) => {
+            const formattedData = {id,
+                name: title, eventType: type, location, 
+                startTime, endTime, description, thumbnailImageData, 
+                foodProvided, collaborators
+            }
+            setForm({...formattedData});
+            setCurrentlyEditing({...formattedData});
+            setStatus({ type: null, message: '' });
+        });
     }, []);
+
+    const cancelEditing = (e) => {
+        if (e?.type === 'click'){
+            if (!confirm('Are you sure you want to cancel editing?')) return;
+        }
+
+        setCurrentlyEditing(null);
+        setForm({
+            name: '', eventType: '', location: '', startTime: '', 
+            endTime: '', description: '', thumbnailImageData: null, 
+            foodProvided: false, collaborators: '' 
+        });
+        setStatus({ type: null, message: '' });
+    };
 
     // Load the Google Identity Services script once, then render the button.
     useEffect(() => {
@@ -99,17 +135,38 @@ function AdminSubmissionForm({ events }) {
             return;
         }
 
+        if (!confirm('Are you sure you want to submit this form?')) {
+            return;
+        }
+
         setSubmitting(true);
-        setStatus({ type: 'pending', message: 'Submitting…' });
+        setStatus({ type: 'pending', message: 'Submitting...' });
 
         try {
+            let action = 'submit';
+            let submitData = { ...form };
+            if (currentlyEditing) {
+                action = 'update';
+
+                let changes = getCurrentChangesKeys();
+                if (changes.length === 0) {
+                    setStatus({ type: 'error', message: 'No changes to update.' });
+                    return;
+                }
+                submitData = {};
+                for (const key of changes) {
+                    submitData[key] = form[key];
+                }
+            }
+
             const res = await fetch(WEB_APP_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'text/plain' }, // avoids CORS preflight with Apps Script
                 body: JSON.stringify({
                     idToken: idTokenRef.current,
-                    action: 'submit',
-                    ...form,
+                    action: action,
+                    ...submitData,
+                    id: currentlyEditing?.id,
                 }),
             });
 
@@ -131,10 +188,75 @@ function AdminSubmissionForm({ events }) {
             setStatus({ type: 'error', message: 'Network error — please try again.' });
         } finally {
             setSubmitting(false);
+            cancelEditing();
         }
     }
 
+    async function deleteEvent() {
+        if (!currentlyEditing) return;
+
+        if (!idTokenRef.current) {
+            setStatus({ type: 'error', message: 'Please sign in with Google first.' });
+            return;
+        }
+
+        if (!confirm('Are you sure you want to delete this event?')) {
+            return;
+        }
+
+        setSubmitting(true);
+        setStatus({ type: 'pending', message: 'Submitting...' });
+
+        try {
+            const res = await fetch(WEB_APP_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain' }, // avoids CORS preflight with Apps Script
+                body: JSON.stringify({
+                    idToken: idTokenRef.current,
+                    action: 'delete',
+                    id: currentlyEditing.id,
+                }),
+            });
+
+            const result = await res.json();
+
+            if (result.status === 'ok') {
+                setStatus({ type: 'pending', message: 'Processing...' });
+            } else if (result.status === 'success') {
+                setStatus({ type: 'success', message: 'Event deleted successfully.' });
+            } else {
+                setStatus({ type: 'error', message: result.message || 'Something went wrong.' });
+            }
+        } catch (err) {
+            setStatus({ type: 'error', message: 'Network error — please try again.' });
+        } finally {
+            setSubmitting(false);
+        }
+
+        // After deleting, reset the form and currently editing state
+        setCurrentlyEditing(null);
+        setForm({
+            name: '', eventType: '', location: '', startTime: '', 
+            endTime: '', description: '', thumbnailImageData: null, 
+            foodProvided: false, collaborators: '' 
+        });
+    }
+
     const isUnlocked = Boolean(user);
+
+    const getThumbnail = () => {
+        if (currentlyEditing?.thumbnailImageData) {
+            return currentlyEditing.thumbnailImageData;
+        }
+        return form.thumbnailImageData ? `data:${form.thumbnailImageData.imageMimeType};base64,${form.thumbnailImageData.base64}` : undefined;
+    }
+
+    const getCurrentChangesKeys = () => {
+        return Object.keys(form).filter((key) => {
+            if (form[key] === currentlyEditing?.[key]) return false;
+            return true;
+        });
+    }
 
     return (
             <div className="eventForm">
@@ -154,6 +276,10 @@ function AdminSubmissionForm({ events }) {
                         </div>
                     )}
                 </div>
+
+                <h2 style={{ marginBottom: '-6px' }}>Edit Existing Events</h2>
+                <p>Currently Editing: {currentlyEditing?.name || 'None'}</p>
+                <EventsList events={events} onLearnMore={onEventCardClick} />
 
                 <form onSubmit={handleSubmit}>
                     <fieldset disabled={!isUnlocked} className="fieldset" style={{ opacity: isUnlocked ? 1 : 0.5 }}>
@@ -290,7 +416,7 @@ function AdminSubmissionForm({ events }) {
                             location={form.location}
 
                             description={form.description}
-                            thumbnail={form.thumbnailImageData ? `data:${form.thumbnailImageData.imageMimeType};base64,${form.thumbnailImageData.base64}` : undefined}
+                            thumbnail={getThumbnail()}
                         />
                     </div>
 
@@ -298,13 +424,46 @@ function AdminSubmissionForm({ events }) {
                         <sub>Sign in with Google above to enable this form.</sub>
                     )}
 
+                    {currentlyEditing && (
+                        <>
+                        <p>Currently Editing: {currentlyEditing.name}</p>
+                        <p>Current Changes: </p>
+                        {
+                            getCurrentChangesKeys().map((change) => {
+                                if (!change) return null;
+                                return <p key={change}>{change}</p>;
+                            })
+                        }
+                        </>
+                    )}
                     <button
                         type="submit"
                         disabled={!isUnlocked || submitting}
                         className={`button unselectable ${!isUnlocked || submitting ? 'buttonDisabled' : ''}`}
                     >
-                        Submit
+                        {currentlyEditing ? `Update "${currentlyEditing.name}"` : 'Submit'}
                     </button>
+
+                    {currentlyEditing && (
+                        <>
+                        <button
+                            type="button"
+                            onClick={(e) => cancelEditing(e)}
+                            className="button unselectable"
+                            style={{ marginTop: '10px', backgroundColor: 'grey' }}
+                        >
+                            Cancel Editing
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => deleteEvent()}
+                            className="button unselectable"
+                            style={{ marginTop: '20px', backgroundColor: 'red' }}
+                        >
+                            Delete Event
+                        </button>
+                        </>
+                    )}
 
                     {status.type && (
                         <div className={`status status_${status.type}`}>
@@ -317,7 +476,10 @@ function AdminSubmissionForm({ events }) {
 }
 
 
-function Admin() {
+function Admin({ events }) {
+    // sort events by start time in descending order (most recent first)
+    const sortedEvents = Object.values(events).sort((a, b) => new Date(b.startTime) - new Date(a.startTime));
+
     return (
         <div className="admin">
             <PageHeader title="Admin" subtitle="Hi 👋" />
@@ -327,7 +489,7 @@ function Admin() {
                     <p>
                         This form allows you to submit events to the SHPE IIT website. Please fill out all required fields and provide accurate information.
                     </p>
-                    <AdminSubmissionForm />
+                    <AdminSubmissionForm events={sortedEvents} />
                 </CollapsibleSection>
             </div>
         </div>

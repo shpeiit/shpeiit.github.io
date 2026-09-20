@@ -60,6 +60,9 @@ function handleEventRedirect(events) {
 }
 
 function Events({ events }) {
+    const navigate = useNavigate();
+    const eventsListOnClick = ({id}) => {navigate(`/events?id=${id}`);};
+    
     const upcomingEvents = []; // Object.values(events).filter(event => new Date(event.endTime) >= new Date());
     const previousEvents = []; // Object.values(events).filter(event => new Date(event.endTime) < new Date());
 
@@ -92,13 +95,13 @@ function Events({ events }) {
                 {upcomingEvents.length === 0 ? (
                     <p>No upcoming events.</p>
                 ) : (
-                    <EventsList events={upcomingEvents} />
+                    <EventsList events={upcomingEvents} onLearnMore={eventsListOnClick} />
                 )}
                 <h2>Previous Events</h2>
                 {previousEvents.length === 0 ? (
                     <p>No previous events.</p>
                 ) : (
-                    <EventsList events={previousEvents} />
+                    <EventsList events={previousEvents} onLearnMore={eventsListOnClick} />
                 )}
                 <h2>Photo Gallery</h2>
                 <p>WIP</p>

@@ -2,12 +2,13 @@ import EventCard from './EventCard';
 
 import './EventsList.css';
 
-function EventsList({ events }) {
+function EventsList({ events, onLearnMore }) {
     return (
         <div className="eventsList">
             {events.map((event, index) => (
                 <div className="eventCardWrapper" key={index}>
                     <EventCard 
+                    id={event.id}
                     title={event.name}
                     type={event.eventType}
                     collaborators={event.collaborators}
@@ -21,7 +22,7 @@ function EventsList({ events }) {
                     thumbnail={event.thumbnailFile}
                     thumbnailLowres={event.thumbnailFileLowres}
 
-                    onLearnMore={event.onLearnMore || undefined}
+                    onLearnMore={onLearnMore || undefined}
                 />
                 </div>
             ))}

@@ -34,11 +34,13 @@ function parseDate(startTime, endTime){
     return { startTime, endTime };
 }
 
-function EventCard({ title, startTime, endTime, location, 
+function EventCard({ id, title, startTime, endTime, location, 
     description, type, thumbnail, thumbnailLowres, onLearnMore, 
     showPlaceholderValues=false, foodProvided=false,
     collaborators=""
 }) {
+    const unparsedStartTime = startTime;
+    const unparsedEndTime = endTime;
     ({startTime, endTime} = parseDate(startTime, endTime));
 
     if (showPlaceholderValues) {
@@ -66,8 +68,15 @@ function EventCard({ title, startTime, endTime, location,
 
     const canHover = onLearnMore !== undefined;
 
+    const onClick = onLearnMore && (() => 
+        onLearnMore({ id, title, startTime : unparsedStartTime, endTime : unparsedEndTime, location, 
+            description, type, thumbnail, thumbnailLowres, 
+            foodProvided, collaborators: (collaborators.join(', '))
+        })
+    );
+
     return (
-        <div onClick={onLearnMore} className={`eventCard ${canHover ? 'canHover' : ''}`}>
+        <div onClick={onClick} className={`eventCard ${canHover ? 'canHover' : ''}`}>
             <div className="thumbnailContainer unselectable">
                 {thumbnail && <img className="thumbnail not-draggable" style={{ "--lowres": `url(${thumbnailLowres})` }} src={thumbnail}></img>}
                 {type && <p className="eventType">{type}</p>}

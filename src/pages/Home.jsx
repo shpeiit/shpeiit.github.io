@@ -5,10 +5,15 @@ import CollapsibleSection from '../assets/CollapsibleSection';
 import EventsList from '../assets/EventsList';
 import './Home.css';
 
+import { useNavigate } from "react-router"; 
+
 const sponsorshipFormLink = "https://forms.gle/UDWuHisuumWEHQMu9";
 const donationLink = "https://secure.touchnet.com/C20090_ustores/web/product_detail.jsp?PRODUCTID=1860&SINGLESTORE=true";
 
 function Home({ events }) {
+    const navigate = useNavigate();
+    const eventsListOnClick = ({id}) => {navigate(`/events?id=${id}`);};
+
     let upcomingEvents = Object.values(events).filter(event => new Date(event.endTime) >= new Date());
     upcomingEvents.sort((a, b) => new Date(a.startTime) - new Date(b.startTime));
     upcomingEvents = upcomingEvents.slice(0, 3);
@@ -20,8 +25,8 @@ function Home({ events }) {
             <div className="content">
                 <div className="upcomingEventsSection">
                     <h2>Upcoming Events</h2>
-                    <EventsList events={upcomingEvents} />
-                    <CustomButton link="/events">View All Events</CustomButton>
+                    <EventsList events={upcomingEvents} onLearnMore={eventsListOnClick} />
+                    <CustomButton link="/events" >View All Events</CustomButton>
                 </div>
 
                 <div className="section">

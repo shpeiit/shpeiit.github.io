@@ -20,7 +20,7 @@ let lastEventsRead = null;
 let canFetchEvents = true;
 function getEvents() {
   const navigate = useNavigate();
-  
+
   const [rows, setRows] = useState({});
 
   useEffect(() => {
@@ -66,10 +66,6 @@ function getEvents() {
             };
             img.src = data['thumbnailFileLowres'];
           }
-
-          data['onLearnMore'] = () => {
-            navigate(`/events?id=${id}`);
-          };
           
           setRows(prev => ({ ...prev, [id]: data }));
         }
