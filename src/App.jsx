@@ -33,8 +33,6 @@ function getEvents() {
     }
     canFetchEvents = false;
 
-    console.log("Fetching events...");
-
     fetch(`https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv`)
       .then(r => r.text())
       .then(text => {
@@ -51,7 +49,7 @@ function getEvents() {
           
           const data = JSON.parse(rawData);
           if (data['thumbnailFileId']) {
-            data['thumbnailFile'] = "https://drive.google.com/thumbnail?id=" + data['thumbnailFileId'] + "?authuser=0";
+            data['thumbnailFile'] = "https://drive.google.com/thumbnail?id=" + data['thumbnailFileId'];
             data['thumbnailFileLowres'] = "https://drive.google.com/thumbnail?id=" + data['thumbnailFileId'] + "&sz=w30";
             // data['thumbnailFile'] = "https://lh3.googleusercontent.com/d/" + data['thumbnailFileId'];
             // data['thumbnailFileLowres'] = "https://lh3.googleusercontent.com/d/" + data['thumbnailFileId'] + "=w30";
