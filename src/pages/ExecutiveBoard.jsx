@@ -81,7 +81,7 @@ const internalTeam = {
         name: "Hayden Castillo",
         image: "execPhotos/hayden.jpg",
         email: "mailto:recruitment.shpe.iit@gmail.com",
-        linkedIn: "",
+        linkedIn: "https://www.linkedin.com/in/hayden-castillo/",
         major: "Aerospace Engineering"
     },
     ["Leadership Lead"]: {
@@ -250,11 +250,11 @@ const outreachTeam = {
         major: "n/a"
     },
     ["Noche de Ciencias Lead"]: {
-        name: "n/a",
-        image: null,
+        name: "Angel Castillo Campa",
+        image: "execPhotos/angel.png",
         email: "",
-        linkedIn: "",
-        major: "n/a"
+        linkedIn: "https://www.linkedin.com/in/angel-castillo-campa-149944434/",
+        major: "Aerospace Engineering"
     },
     ["Philanthropy Lead"]: {
         name: "Cesar Herrera",

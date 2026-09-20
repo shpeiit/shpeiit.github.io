@@ -8,7 +8,10 @@
 
 .executiveBoard .CollapsibleSection .membersContainer {
     display: flex;
+
+    flex-wrap: wrap;          /* fallback for older browsers */
     flex-wrap: wrap balance;
+
     justify-content: center;
     gap: 1rem;
     margin-top: 1rem;
