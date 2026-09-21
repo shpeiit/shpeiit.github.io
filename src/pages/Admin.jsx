@@ -11,8 +11,35 @@ const GOOGLE_CLIENT_ID = '646676386235-3fskhiilla83048oe21u34ph3gah6qp1.apps.goo
 const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwhCXZ28NBiNZvJ0q7CVYEUKX0Gnk4ofVScDJF0r9EovRwm7GUK3YTQcQJBxPhr7a-E/exec';
 
 const ADMIN_GMAILS = [
-    "webjr.shpe.iit@gmail.com"
-]
+    "webjr.shpe.iit@gmail.com",
+    "webmaster.shpe.iit@gmail.com",
+
+    "president.shpe.iit@gmail.com",
+    "vp.shpe.iit@gmail.com",
+    "extvp.shpe.iit@gmail.com",
+    
+    "academics.shpe.iit@gmail.com",
+    "coordinator.shpe.iit@gmail.com",
+    "finance.shpe.iit@gmail.com",
+    "fundraiser.shpe.iit@gmail.com",
+    "graduate.shpe.iit@gmail.com",
+    "outreach1.shpe.iit@gmail.com",
+    "pr.shpe.iit@gmail.com",
+    "secretary.shpe.iit@gmail.com",
+    "shpejr.shpe.iit@gmail.com",
+    "treasurer.shpe.iit@gmail.com",
+    "leadership.shpe.iit@gmail.com",
+    "pd.shpe.iit@gmail.com",
+    "liason.shpe.iit@gmail.com",
+    "conference.shpe.iit@gmail.com",
+    "recruitment.shpe.iit@gmail.com",
+    "shpetinas.shpe.iit@gmail.com",
+    "philanthropy.shpe.iit@gmail.com",
+    "alumni.shpe.iit@gmail.com",
+    "corporate.shpe.iit@gmail.com",
+    "diadeciencias.shpe.iit@gmail.com",
+    "internalrelations.shpe.iit@gmail.com"
+];
 
 function AdminSubmissionForm({ events }) {
     const signInDivRef = useRef(null);
