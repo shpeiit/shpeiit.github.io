@@ -41,6 +41,8 @@ function EventCard({ id, title, startTime, endTime, location,
 }) {
     const unparsedStartTime = startTime;
     const unparsedEndTime = endTime;
+    const isCurrent = (event) => new Date(unparsedEndTime) >= new Date() && new Date(unparsedStartTime) <= new Date();
+
     ({startTime, endTime} = parseDate(startTime, endTime));
 
     if (showPlaceholderValues) {
@@ -76,7 +78,7 @@ function EventCard({ id, title, startTime, endTime, location,
     );
 
     return (
-        <div onClick={onClick} className={`eventCard ${canHover ? 'canHover' : ''}`}>
+        <div onClick={onClick} className={`eventCard ${canHover ? 'canHover' : ''} ${isCurrent() ? 'current' : ''}`}>
             <div className="thumbnailContainer unselectable">
                 {thumbnail && <img className="thumbnail not-draggable" style={{ "--lowres": `url(${thumbnailLowres})` }} src={thumbnail}></img>}
                 {type && <p className="eventType">{type}</p>}

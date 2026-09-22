@@ -64,3 +64,61 @@
     color: inherit ! important;
     text-decoration: none;
 }
+
+
+.communitySection {
+    margin: 20px 0;
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+
+    --text-column: 1;
+    --carousel-column: 1;
+    --carousel-row: 3;
+
+    align-items: center;
+    justify-items: center;
+}
+.communitySection h3 {
+    grid-row: 1 / span 1;
+    grid-column: var(--text-column) / span 1;
+    margin-bottom: 0;
+
+    font-size: 1.5rem;
+}
+.communitySection p {
+    grid-row: 2 / span 1;
+    grid-column: var(--text-column) / span 1;
+    
+    align-self: start;
+    margin: 0 20px;
+}
+
+.communitySection .carouselContainer {
+    width: 100%;
+    grid-row: var(--carousel-row) / span 2;
+    grid-column: var(--carousel-column) / span 1;
+
+    max-height: 300px;
+    max-width: 500px;
+    min-width: 300px;
+}
+@media (min-width: 600px) { /* On bigger screens text can be next to the carousel */
+    .communitySection {
+        --text-column-width: min(300px, 50%);
+        
+        grid-template-rows: auto 1fr;
+        grid-template-columns: auto auto;
+        --text-column: 2;
+        --carousel-column: 1;
+        --carousel-row: 1;
+    }
+    .communitySectionLeft {
+        grid-template-columns: auto auto;
+
+        --text-column: 1;
+        --carousel-column: 2;
+    }
+}

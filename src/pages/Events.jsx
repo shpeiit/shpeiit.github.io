@@ -24,7 +24,7 @@ function handleEventRedirect(events) {
 
     const event = events[eventId];
     if (!event) {
-        navigate(`/events`);
+        navigate(`/events`, {state: { newData: true }});
         return;
     }
 
@@ -61,7 +61,7 @@ function handleEventRedirect(events) {
 
 function Events({ events }) {
     const navigate = useNavigate();
-    const eventsListOnClick = ({id}) => {navigate(`/events?id=${id}`);};
+    const eventsListOnClick = ({id}) => {navigate(`/events?id=${id}`, {state: { newData: true }});};
     
     const upcomingEvents = []; // Object.values(events).filter(event => new Date(event.endTime) >= new Date());
     const previousEvents = []; // Object.values(events).filter(event => new Date(event.endTime) < new Date());

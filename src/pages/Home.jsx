@@ -3,6 +3,7 @@ import LinkElem from '../assets/LinkElem';
 import CustomButton from '../assets/Buttons';
 import CollapsibleSection from '../assets/CollapsibleSection';
 import EventsList from '../assets/EventsList';
+import Carousel from '../assets/Carousel';
 import './Home.css';
 
 import { useNavigate } from "react-router"; 
@@ -12,7 +13,7 @@ const donationLink = "https://secure.touchnet.com/C20090_ustores/web/product_det
 
 function Home({ events }) {
     const navigate = useNavigate();
-    const eventsListOnClick = ({id}) => {navigate(`/events?id=${id}`);};
+    const eventsListOnClick = ({id}) => {navigate(`/events?id=${id}`, {state: { newData: true }});};
 
     let upcomingEvents = Object.values(events).filter(event => new Date(event.endTime) >= new Date());
     upcomingEvents.sort((a, b) => new Date(a.startTime) - new Date(b.startTime));
@@ -92,6 +93,31 @@ function Home({ events }) {
                         in the near future.
                         </p>
                     </CollapsibleSection>
+                </div>
+                <div className="section">
+                    <h2>What We Do as a Community</h2>
+
+                    <div className="communitySection communitySectionLeft">
+                        <h3>Workshops</h3>
+                        <p>We expose members to various activities to facilitate their professional growth, curiosity, and success.</p>
+                        <Carousel images={['/profdev.jpg', '/shpeworkshop.jpg', '/shpemockcareerfair.jpg']} />
+                    </div>
+                    <div className="communitySection">
+                        <h3>Conferences</h3>
+                        <p>We participate in regional and national conferences to network, learn, and showcase our chapter's 
+                            achievements.</p>
+                        <Carousel images={['/shpeconf1.jpg', '/shpeconf2.jpg', '/shpeconf3.jpg']} />
+                    </div>
+                    <div className="communitySection communitySectionLeft">
+                        <h3>Social Events</h3>
+                        <p>We organize social events to foster camaraderie, networking, and a sense of community among our members.</p>
+                        <Carousel images={['/social.jpg', '/chinatownrun.jpg']} />
+                    </div>
+                    <div className="communitySection">
+                        <h3>Community Service</h3>
+                        <p>We engage in community service activities to give back to the local community and make a positive impact.</p>
+                        <Carousel images={['/magmile.jpg', '/shpevolunteer.jpg']} />
+                    </div>
                 </div>
 
                 <LinkElem link="https://www.shpe-iit.org/home">See more details at Old Website</LinkElem>

@@ -1,0 +1,108 @@
+
+.carouselContainer {
+    position: relative;
+    display: grid;
+
+    grid-template-rows: 1fr auto 1fr 20px;
+    grid-template-columns: auto 1fr auto;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    scroll-marker-group: after;
+
+    grid-row: 1 / span 3;
+    grid-column: 1 / span 3;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.carousel img {
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    scroll-snap-align: start;
+
+    object-fit: cover;
+}
+
+.carousel::scroll-button(*) {
+    border: 0;
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+    background: var(--primary-color);
+    color: white;
+    opacity: 0.8;
+    cursor: pointer;
+
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+
+    transition: transform 0.1s ease-in-out;
+}
+.carousel::scroll-button(*):hover,
+.carousel::scroll-button(*):focus {
+    transform: scale(1.05);
+    opacity: 1;
+}
+.carousel::scroll-button(*):active {
+    transform: scale(0.95);
+}
+.carousel::scroll-button(*):disabled {
+    opacity: 0.2;
+    cursor: unset;
+}
+
+.carousel::scroll-button(left) {
+    content: "◄" / "Previous";
+    left: 0;
+
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+}
+
+.carousel::scroll-button(right) {
+    content: "►" / "Next";
+    right: 0;
+
+    grid-row: 2 / span 1;
+    grid-column: 3 / span 1;
+}
+
+.carousel::scroll-marker-group {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+
+    gap: 10px;
+    margin-top: 2px;
+    height: fit-content;
+
+    grid-row: 4 / span 1;
+    grid-column: 1 / span 3;
+    justify-self: center;
+}
+
+.carousel img.notEnd::scroll-marker {
+    content: attr(data-accName);
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    border: 2px solid var(--font-color);
+    border-radius: 50%;
+    overflow: hidden;
+    text-indent: 16px;
+}
+
+.carousel img.notEnd::scroll-marker:target-current {
+    background-color: var(--primary-color-fonted);
+}
