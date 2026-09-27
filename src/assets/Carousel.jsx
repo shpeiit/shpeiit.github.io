@@ -21,7 +21,7 @@ function Carousel({ images }) {
 
         if (carousel.scrollLeft < itemWidth / 4) {
             carousel.scrollLeft = width - itemWidth * 2;
-        } else if (carousel.scrollLeft > width - itemWidth / 4) {
+        } else if (carousel.scrollLeft > width - itemWidth * 5 / 4) {
             carousel.scrollLeft = itemWidth;
         }
     };
