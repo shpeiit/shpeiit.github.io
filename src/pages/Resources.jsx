@@ -2,6 +2,7 @@ import PageHeader from '../assets/PageHeader';
 import LinkElem from '../assets/LinkElem';
 import CollapsibleSection from '../assets/CollapsibleSection';
 import Calendar from '../assets/Calendar';
+import GbmSlides from '../assets/GbmSlides';
 
 import './Resources.css';
 
@@ -16,10 +17,11 @@ function Resources() {
                     the events calendar (below).
                 </p>
                 <p>For specific events information, check out our <LinkElem to="/events">events page</LinkElem>.</p>
-                <p>
-                    Previous GBM slides (WIP).
-                </p>
-                
+                <h3>Previous GBM slides</h3>
+                <CollapsibleSection text="Click to open/close">
+                    <GbmSlides />
+                </CollapsibleSection>
+
                 <h3> SHPE IIT Calendar (Events & study hours) </h3>
                 <CollapsibleSection text="Click to open/close">
                     <Calendar />

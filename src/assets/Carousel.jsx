@@ -19,9 +19,9 @@ function Carousel({ images }) {
         const width = carousel.scrollWidth;
         const itemWidth = width / (images.length + 2);
 
-        if (carousel.scrollLeft < itemWidth / 2) {
+        if (carousel.scrollLeft < itemWidth / 4) {
             carousel.scrollLeft = width - itemWidth * 2;
-        } else if (carousel.scrollLeft > width - itemWidth * 2) {
+        } else if (carousel.scrollLeft > width - itemWidth / 4) {
             carousel.scrollLeft = itemWidth;
         }
     };
