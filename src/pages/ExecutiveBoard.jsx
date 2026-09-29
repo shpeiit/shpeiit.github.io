@@ -99,11 +99,11 @@ const internalTeam = {
         major: "Electrical Engineering"
     },
     ["Internal Relations"]: {
-        name: "n/a",
+        name: "Axel Aguilar Garcia",
         image: null,
         email: "",
-        linkedIn: "",
-        major: "n/a"
+        linkedIn: "https://www.linkedin.com/in/axel-aguilar-03401733a/",
+        major: "Aerospace Engineering"
     }
 };
 
@@ -123,11 +123,11 @@ const externalTeam = {
         major: "Electrical Engineering"
     },
     ["MentorSHPE Lead"]: {
-        name: "n/a",
-        image: null,
+        name: "Yslam Ismailov",
+        image: "execPhotos/yslam.jpeg",
         email: "",
-        linkedIn: "",
-        major: "n/a"
+        linkedIn: "https://www.linkedin.com/in/yslami/",
+        major: "Computer Science"
     },
     ["External Relations"]: {
         name: "n/a",
@@ -157,11 +157,11 @@ const logisticsTeam = {
 
 const academicTeam = {
     ["Graduate Lead"]: {
-        name: "n/a",
-        image: null,
-        email: "",
-        linkedIn: "",
-        major: "n/a"
+        name: "Dara Mesta Gallegos",
+        image: "execPhotos/dara.jpg",
+        email: "mailto:Graduate.shpe.iit@gmail.com",
+        linkedIn: "https://www.linkedin.com/in/dara-mesta-gallegos/",
+        major: "Civil Engineering"
     },
     ["Technical Lead"]: {
         name: "Salman Amir",
@@ -243,11 +243,11 @@ const shpetinasTeam = {
 
 const outreachTeam = {
     ["SHPEjr Lead"]: {
-        name: "n/a",
-        image: null,
-        email: "",
-        linkedIn: "",
-        major: "n/a"
+        name: "Mariana Quintana Buquez",
+        image: "execPhotos/mariana.jpeg",
+        email: "mailto:ShpeJr.shpe.iit@gmail.com",
+        linkedIn: "https://www.linkedin.com/in/marianaquintana28",
+        major: "Civil Engineering"
     },
     ["Noche de Ciencias Lead"]: {
         name: "Angel Castillo Campa",

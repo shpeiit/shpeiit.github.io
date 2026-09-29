@@ -73,12 +73,12 @@ function AdminSubmissionForm({ events }) {
         setStatus({ type: null, message: '' });
 
         setOnEventCardClick(() => ({id, title, type, location, 
-            startTime, endTime, description, thumbnailImageData, 
+            startTime, endTime, description, thumbnail, 
             foodProvided, collaborators
         }) => {
             const formattedData = {id,
                 name: title, eventType: type, location, 
-                startTime, endTime, description, thumbnailImageData, 
+                startTime, endTime, description, thumbnailImageData: thumbnail, 
                 foodProvided, collaborators
             }
             setForm({...formattedData});
@@ -377,7 +377,7 @@ function AdminSubmissionForm({ events }) {
                         </div>
 
                         <div className="field">
-                            <label className="label" htmlFor="collaborators">Collaborating Organizations</label>
+                            <label className="label" htmlFor="collaborators">Collaborating Organizations (Optional: leave blank if none)</label>
                             <input
                                 id="collaborators"
                                 type="text"
