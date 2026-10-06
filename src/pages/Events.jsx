@@ -4,14 +4,21 @@ import LinkElem from '../assets/LinkElem';
 import CustomButton from '../assets/Buttons';
 import { parseDate } from '../assets/EventCard';
 
-import { useLocation, useNavigate } from 'react-router';
+import { useLocation, useNavigate, useOutletContext } from 'react-router';
+import { buildMeta } from '../seo';
 
 import './Events.css';
 
-function handleEventRedirect(events) {
+export const meta = () => buildMeta({
+    title: 'Events | SHPE IIT',
+    description: 'See upcoming and past SHPE IIT events, workshops, socials, and professional development opportunities.',
+    pathname: '/events',
+});
+
+function handleEventRedirect(events, search) {
     const navigate = useNavigate();
 
-    const queryParams = new URLSearchParams(window.location.search);
+    const queryParams = new URLSearchParams(search);
     const eventId = queryParams.get('id');
 
     if (!eventId) {
@@ -59,7 +66,9 @@ function handleEventRedirect(events) {
     )
 }
 
-function Events({ events }) {
+function Events() {
+    const { events = {} } = useOutletContext() || {};
+    const location = useLocation();
     const navigate = useNavigate();
     const eventsListOnClick = ({id}) => {navigate(`/events?id=${id}`, {state: { newData: true }});};
     
@@ -77,7 +86,7 @@ function Events({ events }) {
     upcomingEvents.sort((a, b) => new Date(a.startTime) - new Date(b.startTime));
     previousEvents.sort((a, b) => new Date(b.startTime) - new Date(a.startTime));
 
-    const eventRedirectElem = handleEventRedirect(events);
+    const eventRedirectElem = handleEventRedirect(events, location.search);
 
     if (eventRedirectElem) {
         return eventRedirectElem;
@@ -88,7 +97,7 @@ function Events({ events }) {
             <PageHeader title="Events" />
             <div className="content">
                 <p>Check out our upcoming and previous events below.</p>
-                <p>For study hours and general body meeting slides, check out our <LinkElem to="/resources">resources page</LinkElem>.</p>
+                <p>For study hours and general body meeting slides, check out our <LinkElem link="/resources">resources page</LinkElem>.</p>
                 <p>For more information about an event, click on the learn more button.</p>
 
                 <h2>Upcoming Events</h2>

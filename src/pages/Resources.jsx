@@ -5,6 +5,13 @@ import Calendar from '../assets/Calendar';
 import GbmSlides from '../assets/GbmSlides';
 
 import './Resources.css';
+import { buildMeta } from '../seo';
+
+export const meta = () => buildMeta({
+    title: 'Resources | SHPE IIT',
+    description: 'Browse SHPE IIT resources including GBM slides, calendar information, study hours, and national SHPE resources.',
+    pathname: '/resources',
+});
 
 function Resources() {
     return (
@@ -16,7 +23,7 @@ function Resources() {
                     Information about study hours and general body meeting slides can be found here. As well as
                     the events calendar (below).
                 </p>
-                <p>For specific events information, check out our <LinkElem to="/events">events page</LinkElem>.</p>
+                <p>For specific events information, check out our <LinkElem link="/events">events page</LinkElem>.</p>
                 <h3>Previous GBM slides</h3>
                 <CollapsibleSection text="Click to open/close">
                     <GbmSlides />

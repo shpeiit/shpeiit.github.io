@@ -2,9 +2,14 @@ import { Link } from 'react-router';
 import './LinkElem.css';
 
 const isLinkExternal = (link) => {
+    if (!link) return false;
+
     try {
-        const url = new URL(link, window.location.origin);
-        return url.hostname !== window.location.hostname;
+        const baseOrigin = typeof window === 'undefined'
+            ? 'https://shpeiit.github.io'
+            : window.location.origin;
+        const url = new URL(link, baseOrigin);
+        return url.hostname !== new URL(baseOrigin).hostname;
     } catch {
         return true;
     }

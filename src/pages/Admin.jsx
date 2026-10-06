@@ -3,8 +3,17 @@ import PageHeader from '../assets/PageHeader';
 import CollapsibleSection from '../assets/CollapsibleSection';
 import EventCard from '../assets/EventCard';
 import EventsList from '../assets/EventsList';
+import { buildMeta } from '../seo';
 
 import './Admin.css';
+import { useOutletContext } from 'react-router';
+
+export const meta = () => buildMeta({
+    title: 'Admin | SHPE IIT',
+    description: 'Administrative tools for managing SHPE IIT events.',
+    pathname: '/admin',
+    noindex: true,
+});
 
 
 const GOOGLE_CLIENT_ID = '646676386235-3fskhiilla83048oe21u34ph3gah6qp1.apps.googleusercontent.com';
@@ -503,7 +512,8 @@ function AdminSubmissionForm({ events }) {
 }
 
 
-function Admin({ events }) {
+function Admin() {
+    const { events = {} } = useOutletContext() || {};
     // sort events by start time in descending order (most recent first)
     const sortedEvents = Object.values(events).sort((a, b) => new Date(b.startTime) - new Date(a.startTime));
 

@@ -3,6 +3,13 @@ import ExecCard from '../assets/ExecCard';
 import CollapsibleSection from '../assets/CollapsibleSection';
 
 import './ExecutiveBoard.css';
+import { buildMeta } from '../seo';
+
+export const meta = () => buildMeta({
+    title: 'Executive Board | SHPE IIT',
+    description: 'Meet the executive board and student leaders guiding SHPE IIT at Illinois Institute of Technology.',
+    pathname: '/executive-board',
+});
 
 
 const president = {

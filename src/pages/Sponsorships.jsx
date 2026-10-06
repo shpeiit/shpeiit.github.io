@@ -5,9 +5,16 @@ import CustomButton from '../assets/Buttons';
 import Sponsor from '../assets/Sponsor';
 import CollapsibleSection from '../assets/CollapsibleSection';
 import './Sponsorships.css';
+import { buildMeta } from '../seo';
 
 const sponsorshipFormLink = "https://forms.gle/UDWuHisuumWEHQMu9";
 const donationLink = "https://secure.touchnet.com/C20090_ustores/web/product_detail.jsp?PRODUCTID=1860&SINGLESTORE=true";
+
+export const meta = () => buildMeta({
+    title: 'Sponsorships | SHPE IIT',
+    description: 'Support SHPE IIT through sponsorships, donations, and partnership opportunities that empower Hispanic engineers at Illinois Tech.',
+    pathname: '/sponsorships',
+});
 
 const sponsors = [
 /*

@@ -32,11 +32,18 @@ const links = {
 }
 
 function Topbar({ height = 4 }) {
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const location = useLocation();
+    const [windowWidth, setWindowWidth] = useState(
+        typeof window === 'undefined' ? 1200 : window.innerWidth
+    );
     
     const hideButtons = windowWidth <= 1100;
 
     useLayoutEffect(() => {
+        if (typeof window === 'undefined') {
+            return;
+        }
+
         function handleResize() {
             setWindowWidth(window.innerWidth);
         }
@@ -52,10 +59,9 @@ function Topbar({ height = 4 }) {
     });
     */
 
-    const [selectedPage, setSelectedPage] = useState(window.location.pathname);    
-    const location = useLocation();
+    const [selectedPage, setSelectedPage] = useState(location.pathname);
     useEffect(() => {
-        setSelectedPage(window.location.pathname);
+        setSelectedPage(location.pathname);
     }, [location]);
 
     const sandwichClick = (e) => {

@@ -6,12 +6,20 @@ import EventsList from '../assets/EventsList';
 import Carousel from '../assets/Carousel';
 import './Home.css';
 
-import { useNavigate } from "react-router"; 
+import { useNavigate, useOutletContext } from "react-router";
+import { buildMeta } from '../seo';
 
 const sponsorshipFormLink = "https://forms.gle/UDWuHisuumWEHQMu9";
 const donationLink = "https://secure.touchnet.com/C20090_ustores/web/product_detail.jsp?PRODUCTID=1860&SINGLESTORE=true";
 
-function Home({ events }) {
+export const meta = () => buildMeta({
+    title: 'SHPE IIT | Illinois Institute of Technology',
+    description: 'Official website of SHPE IIT with chapter information, upcoming events, resources, and sponsorship opportunities.',
+    pathname: '/',
+});
+
+function Home() {
+    const { events = {} } = useOutletContext() || {};
     const navigate = useNavigate();
     const eventsListOnClick = ({id}) => {navigate(`/events?id=${id}`, {state: { newData: true }});};
 
