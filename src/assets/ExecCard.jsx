@@ -4,7 +4,7 @@ import './ExecCard.css';
 const linkedinIcon = "/socials/linkedin-logo.png";
 const emailIcon = "/socials/email-icon.png";
 
-const placeholderImage = "HeadshotPlaceholder.png";
+const placeholderImage = "/HeadshotPlaceholder.png";
 
 const emptyNameVals = ["", "n/a", "none", null, undefined];
 

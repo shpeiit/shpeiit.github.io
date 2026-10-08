@@ -69,13 +69,15 @@ function Topbar({ height = 4 }) {
         parent.classList.toggle("MenuOpen");
     }
 
+    const isSelected = (link) => link + "/" === selectedPage || link === selectedPage;
+
     return <nav style={{ '--topbar-height': `${height}em` }} className="topbar">
         <div className="LogoContainer unselectable">
-            <CustomButton link="/"> <span><img src="shpe-iit-img.png" alt="" style={{ height: `${height - 2}em` }} /></span> </CustomButton>
+            <CustomButton link="/"> <span><img src="/shpe-iit-img.png" alt="" style={{ height: `${height - 2}em` }} /></span> </CustomButton>
         </div>
         {!hideButtons && <div className="ButtonsContainer unselectable">
             {Object.entries(links).map(([text, { icon, iconLeft, link }]) => {
-                const className = link === selectedPage ? "selected" : "";
+                const className = isSelected(link) ? "selected" : "";
 
                 /*
                 return (<div key={text} className={className}>
@@ -95,7 +97,7 @@ function Topbar({ height = 4 }) {
             </CustomButton>
             <div onClick={sandwichClick} className="Menu unselectable">
                 {Object.entries(links).map(([text, { icon, iconLeft, link }]) => {
-                    const className = link === selectedPage ? "selected" : "";
+                    const className = isSelected(link) ? "selected" : "";
                     return (<CustomButton key={text} link={link} className={className} icon={icon} iconLeft={iconLeft}>{text}</CustomButton>);
                 })}
             </div>

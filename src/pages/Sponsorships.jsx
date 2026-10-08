@@ -106,7 +106,7 @@ function Sponsorships() {
                 
                 <div className="fullWidth">
                     <h2>Full SHPE Sponsorship Package</h2>
-                    <Pdf id="shpeSponsorshipPackagePDF" file="SHPE_Sponsorship_Package_26-27.pdf" />
+                    <Pdf id="shpeSponsorshipPackagePDF" file="/SHPE_Sponsorship_Package_26-27.pdf" />
                 </div>
             </div>
         </div>

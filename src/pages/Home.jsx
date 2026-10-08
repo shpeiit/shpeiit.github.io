@@ -29,7 +29,7 @@ function Home() {
 
     return (
         <div className="home">
-            <PageHeader title="Society of Hispanic Professional Engineers" subtitle="At Illinois Institute of Technology" subtitle2="Welcome to SHPE IIT!" image="iitcampus.webp" />
+            <PageHeader title="Society of Hispanic Professional Engineers" subtitle="At Illinois Institute of Technology" subtitle2="Welcome to SHPE IIT!" image="/iitcampus.webp" />
 
             <div className="content">
                 <div className="upcomingEventsSection">

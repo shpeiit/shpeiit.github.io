@@ -4,23 +4,23 @@ import CustomButton from './Buttons';
 const socialLinks = [
     {
         link: "https://www.instagram.com/shpe_iit/",
-        icon: "socials/Instagram_logo.svg"
+        icon: "/socials/Instagram_logo.svg"
     },
     {
         link: "https://discord.com/invite/x25VXvfadj",
-        icon: "socials/discord-logo.png"
+        icon: "/socials/discord-logo.png"
     },
     {
         link: "https://www.linkedin.com/company/shpe-iit",
-        icon: "socials/linkedin-logo.png"
+        icon: "/socials/linkedin-logo.png"
     },
     {
         link: "https://www.facebook.com/shpeiit/",
-        icon: "socials/facebook-logo.png"
+        icon: "/socials/facebook-logo.png"
     },
     {
         link: "https://www.youtube.com/@SHPENational",
-        icon: "socials/YouTube-logo.webp"
+        icon: "/socials/YouTube-logo.webp"
     }
 ]
 

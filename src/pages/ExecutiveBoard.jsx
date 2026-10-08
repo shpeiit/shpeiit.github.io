@@ -15,7 +15,7 @@ export const meta = () => buildMeta({
 const president = {
     name: "Jose Sanchez",
     position: "President",
-    image: "execPhotos/jose.png",
+    image: "/execPhotos/jose.png",
     email: "mailto:President.shpe.iit@gmail.com",
     linkedIn: "https://www.linkedin.com/in/jose-sanchez-pando/",
     major: "Mechanical Engineering"
@@ -24,14 +24,14 @@ const president = {
 const vicePresidents = {
     ["External Vice President"]: {
         name: "Daniela Rojas",
-        image: "execPhotos/danielar.png",
+        image: "/execPhotos/danielar.png",
         email: "mailto:ExtlVp.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/daniela-rojas-serna/",
         major: "Physics"
     },
     ["Internal Vice President"]: {
         name: "Guillermo Hidalgo",
-        image: "execPhotos/guillermo.png",
+        image: "/execPhotos/guillermo.png",
         email: "mailto:Vp.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/guillermohid/",
         major: "Computer Engineering"
@@ -41,42 +41,42 @@ const vicePresidents = {
 const directors = {
     ["Treasurer"]: {
         name: "Ashlee Zuniga Mena",
-        image: "execPhotos/ashlee.png",
+        image: "/execPhotos/ashlee.png",
         email: "mailto:Treasurer.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/ashlee-zuniga-mena/",
         major: "Finance"
     },
     ["Academics Director"]: {
         name: "Adriana Torres-Cruz",
-        image: "execPhotos/adriana.png",
+        image: "/execPhotos/adriana.png",
         email: "mailto:academics.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/adriana-torres-cruz-230274348/",
         major: "Mechanical Engineering"
     },
     ["PR Director"]: {
         name: "Ruth Flores",
-        image: "execPhotos/ruth.png",
+        image: "/execPhotos/ruth.png",
         email: "mailto:pr.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/ruth-flores-7340a4353/",
         major: "Mechanical Engineering"
     },
     ["SHPEtinas Director"]: {
         name: "Daniela Jimenez",
-        image: "execPhotos/danielaj.png",
+        image: "/execPhotos/danielaj.png",
         email: "mailto:shpetinas.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/djjimenz/",
         major: "Computer Science"
     },
     ["Outreach Director"]: {
         name: "Diego Fallad",
-        image: "execPhotos/diego.jpg",
+        image: "/execPhotos/diego.jpg",
         email: "mailto:outreach1.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/diego-fallad8/",
         major: "Computer Engineering"
     },
     ["Conference Director"]: {
         name: "Olivia Kocot",
-        image: "execPhotos/olivia.png",
+        image: "/execPhotos/olivia.png",
         email: "mailto:conference.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/okocot/",
         major: "Biomedical Engineering"
@@ -86,7 +86,7 @@ const directors = {
 const internalTeam = {
     ["Recruitment Chair"]: {
         name: "Hayden Castillo",
-        image: "execPhotos/hayden.jpg",
+        image: "/execPhotos/hayden.jpg",
         email: "mailto:recruitment.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/hayden-castillo/",
         major: "Aerospace Engineering"
@@ -100,7 +100,7 @@ const internalTeam = {
     },
     ["Alumni Lead"]: {
         name: "Felix Gonzalez",
-        image: "execPhotos/felix.png",
+        image: "/execPhotos/felix.png",
         email: "mailto:alumni.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/felix-gonzalezz/",
         major: "Electrical Engineering"
@@ -117,21 +117,21 @@ const internalTeam = {
 const externalTeam = {
     ["Professional Development Lead"]: {
         name: "Ivanova Benegas",
-        image: "execPhotos/ivanova.jpg",
+        image: "/execPhotos/ivanova.jpg",
         email: "mailto:pd.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/alejandra-ivanova-benegas-orantes-0a4579285/",
         major: "Biomedical Engineering"
     },
     ["Corporate Relations Lead"]: {
         name: "Christian Avilez",
-        image: "execPhotos/christian.jpg",
+        image: "/execPhotos/christian.jpg",
         email: "mailto:corporate.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/christian-avilez/",
         major: "Electrical Engineering"
     },
     ["MentorSHPE Lead"]: {
         name: "Yslam Ismailov",
-        image: "execPhotos/yslam.jpeg",
+        image: "/execPhotos/yslam.jpeg",
         email: "",
         linkedIn: "https://www.linkedin.com/in/yslami/",
         major: "Computer Science"
@@ -148,14 +148,14 @@ const externalTeam = {
 const logisticsTeam = {
     ["Fundraising Lead"]: {
         name: "Jaime Bernardino",
-        image: "execPhotos/jaime.jpg",
+        image: "/execPhotos/jaime.jpg",
         email: "mailto:fundraiser.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/jaime--bernardino/",
         major: "Computer Science"
     },
     ["Logistics Lead"]: {
         name: "Raul Diaz",
-        image: "execPhotos/raul.jpg",
+        image: "/execPhotos/raul.jpg",
         email: "mailto:coordinator.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/raul-diaz-02b2163b1/",
         major: "Aerospace Engineering"
@@ -165,31 +165,31 @@ const logisticsTeam = {
 const academicTeam = {
     ["Graduate Lead"]: {
         name: "Dara Mesta Gallegos",
-        image: "execPhotos/dara.jpg",
+        image: "/execPhotos/dara.jpg",
         email: "mailto:Graduate.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/dara-mesta-gallegos/",
         major: "Civil Engineering"
     },
     ["Technical Lead"]: {
         name: "Salman Amir",
-        image: "execPhotos/salman.png",
+        image: "/execPhotos/salman.png",
         email: "mailto:Webmaster.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/salman--amir/",
         major: "Computer Science"
     },
     ["Academic Engagement Lead"]: {
-        name: "n/a",
-        image: null,
+        name: "Maksym Bereziuk",
+        image: "/execPhotos/maksym.png",
         email: "",
-        linkedIn: "",
-        major: "n/a"
+        linkedIn: "https://www.linkedin.com/in/maksym-bereziuk-418945358/",
+        major: "Electrical and Computer Engineering"
     }
 };
 
 const publicityTeam = {
     ["VP of Publicity"]: {
         name: "Isis Navarro",
-        image: "execPhotos/isis.png",
+        image: "/execPhotos/isis.png",
         email: "",
         linkedIn: "https://www.linkedin.com/in/isisxn/",
         major: "Information Technology and Management"
@@ -210,7 +210,7 @@ const publicityTeam = {
     },
     ["Marketing Lead"]: {
         name: "Sebastian Luque",
-        image: "execPhotos/sebastian.jpg",
+        image: "/execPhotos/sebastian.jpg",
         email: "",
         linkedIn: "https://www.linkedin.com/in/sebastian-luque259/",
         major: "Computer Science"
@@ -251,21 +251,21 @@ const shpetinasTeam = {
 const outreachTeam = {
     ["SHPEjr Lead"]: {
         name: "Mariana Quintana Buquez",
-        image: "execPhotos/mariana.jpeg",
+        image: "/execPhotos/mariana.jpeg",
         email: "mailto:ShpeJr.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/marianaquintana28",
         major: "Civil Engineering"
     },
     ["Noche de Ciencias Lead"]: {
         name: "Angel Castillo Campa",
-        image: "execPhotos/angel.png",
+        image: "/execPhotos/angel.png",
         email: "",
         linkedIn: "https://www.linkedin.com/in/angel-castillo-campa-149944434/",
         major: "Aerospace Engineering"
     },
     ["Philanthropy Lead"]: {
         name: "Cesar Herrera",
-        image: "execPhotos/cesar.png",
+        image: "/execPhotos/cesar.png",
         email: "mailto:philanthropy.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/cesar-herrera-361843216/",
         major: "Mechanical Engineering"
