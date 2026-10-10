@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import { BASE_URL } from '../siteConfig';
 import './LinkElem.css';
 
 const isLinkExternal = (link) => {
@@ -6,7 +7,7 @@ const isLinkExternal = (link) => {
 
     try {
         const baseOrigin = typeof window === 'undefined'
-            ? 'https://shpeiit.github.io'
+            ? BASE_URL
             : window.location.origin;
         const url = new URL(link, baseOrigin);
         return url.hostname !== new URL(baseOrigin).hostname;

@@ -1,5 +1,4 @@
-const BASE_URL = "https://shpeiit.github.io";
-const DEFAULT_IMAGE = `${BASE_URL}/favicon.png`;
+import { BASE_URL, DEFAULT_IMAGE } from "./siteConfig";
 
 export function buildMeta({ title, description, pathname, noindex = false }) {
   const absoluteUrl = `${BASE_URL}${pathname}`;
