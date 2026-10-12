@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin
 
-Sitemap: https://shpe-iit.org/sitemap.xml
+Sitemap: https://www.shpe-iit.org/sitemap.xml

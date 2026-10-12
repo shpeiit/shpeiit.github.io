@@ -1,4 +1,4 @@
-const CUSTOM_SITE_URL = "https://shpe-iit.org"; // if none leave null
+const CUSTOM_SITE_URL = "https://www.shpe-iit.org"; // if none leave null
 
 const DEFAULT_SITE_URL = "https://shpeiit.github.io";
 
