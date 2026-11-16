@@ -219,32 +219,32 @@ const publicityTeam = {
 
 const shpetinasTeam = {
     ["Secretary"]: {
-        name: "n/a",
-        imageId: null,
-        email: "",
-        linkedIn: "",
-        major: "n/a"
+        name: "Aramara Martinez",
+        imageId: "1PxoG118w4vZYkOqHavot0EiS2yvWhqHc",
+        email: "shpetinas.operations.iit@gmail.com",
+        linkedIn: "https://www.linkedin.com/in/aimartinez941/",
+        major: "Behavioral Health & Wellness"
     },
     ["PR Chair"]: {
-        name: "n/a",
-        imageId: null,
-        email: "",
-        linkedIn: "",
-        major: "n/a"
+        name: "Laila Miranda",
+        imageId: "1TGmlGl6XwSnh5d9pWdrl_iWhJFBWILDB",
+        email: "shpetinas.pr.iit@gmail.com",
+        linkedIn: "https://www.linkedin.com/in/lailamiranda",
+        major: "Architecture & Construction Management"
     },
     ["Membership Engagement"]: {
-        name: "n/a",
-        imageId: null,
-        email: "",
-        linkedIn: "",
-        major: "n/a"
+        name: "Nimra Nazar Reyes",
+        imageId: "14LRZ90CO9ouYzEKaPiH5J6ym0JhPjzGf",
+        email: "shpetinas.engagement.iit@gmail.com",
+        linkedIn: "https://www.linkedin.com/in/nimra-nazar-reyes-31650a437/",
+        major: "Mechanical Engineering"
     },
     ["Professional Development Chair"]: {
-        name: "n/a",
+        name: "Luna Corro",
         imageId: null,
-        email: "",
-        linkedIn: "",
-        major: "n/a"
+        email: "shpetinas.pd.iit@gmail.com",
+        linkedIn: "https://www.linkedin.com/in/luna-corro-1a851643a",
+        major: "Biomedical Engineering"
     }
 };
 
