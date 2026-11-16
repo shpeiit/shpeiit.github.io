@@ -15,7 +15,7 @@ export const meta = () => buildMeta({
 const president = {
     name: "Jose Sanchez",
     position: "President",
-    image: "/execPhotos/jose.png",
+    imageId: "1XOrw2uQEaLJwDtrvmoKAdKgsdTamTMiH",
     email: "mailto:President.shpe.iit@gmail.com",
     linkedIn: "https://www.linkedin.com/in/jose-sanchez-pando/",
     major: "Mechanical Engineering"
@@ -24,14 +24,14 @@ const president = {
 const vicePresidents = {
     ["External Vice President"]: {
         name: "Daniela Rojas",
-        image: "/execPhotos/danielar.png",
+        imageId: "1HORXdwZRBaOXgMEx8LK98SZOvQddAB_V",
         email: "mailto:ExtlVp.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/daniela-rojas-serna/",
         major: "Physics"
     },
     ["Internal Vice President"]: {
         name: "Guillermo Hidalgo",
-        image: "/execPhotos/guillermo.png",
+        imageId: "1gFIbpZh8EzfjiGiGF_42LCsl7fVNfStK",
         email: "mailto:Vp.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/guillermohid/",
         major: "Computer Engineering"
@@ -41,42 +41,42 @@ const vicePresidents = {
 const directors = {
     ["Treasurer"]: {
         name: "Ashlee Zuniga Mena",
-        image: "/execPhotos/ashlee.png",
+        imageId: "12_QlAukxPOdfS8U2A919a72cZbqdd0Qt",
         email: "mailto:Treasurer.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/ashlee-zuniga-mena/",
         major: "Finance"
     },
     ["Academics Director"]: {
         name: "Adriana Torres-Cruz",
-        image: "/execPhotos/adriana.png",
+        imageId: "1ZB5GqTY-AXGXWHBK8oZoDAR4AWZZ29t1",
         email: "mailto:academics.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/adriana-torres-cruz-230274348/",
         major: "Mechanical Engineering"
     },
     ["PR Director"]: {
         name: "Ruth Flores",
-        image: "/execPhotos/ruth.png",
+        imageId: "1pXiET1e60C3q8mzCYTcEeJXk69MJ1R9w",
         email: "mailto:pr.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/ruth-flores-7340a4353/",
         major: "Mechanical Engineering"
     },
     ["SHPEtinas Director"]: {
         name: "Daniela Jimenez",
-        image: "/execPhotos/danielaj.png",
+        imageId: "1xvVJAFLME5XyCz5fVFa38G5wuOobbB1f",
         email: "mailto:shpetinas.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/djjimenz/",
         major: "Computer Science"
     },
     ["Outreach Director"]: {
         name: "Diego Fallad",
-        image: "/execPhotos/diego.jpg",
+        imageId: "1fI1lQzLajkPoaWvDEjiVFFWROhfXJ_do",
         email: "mailto:outreach1.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/diego-fallad8/",
         major: "Computer Engineering"
     },
     ["Conference Director"]: {
         name: "Olivia Kocot",
-        image: "/execPhotos/olivia.png",
+        imageId: "19SBXWmNbvDJO24W1R8A9VICPV6_F4_81",
         email: "mailto:conference.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/okocot/",
         major: "Biomedical Engineering"
@@ -86,28 +86,28 @@ const directors = {
 const internalTeam = {
     ["Recruitment Chair"]: {
         name: "Hayden Castillo",
-        image: "/execPhotos/hayden.jpg",
+        imageId: "19jXgFuSSe28OdXpVZrLG85gUkQf151h8",
         email: "mailto:recruitment.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/hayden-castillo/",
         major: "Aerospace Engineering"
     },
     ["Leadership Lead"]: {
         name: "n/a",
-        image: null,
+        imageId: null,
         email: "",
         linkedIn: "",
         major: ""
     },
     ["Alumni Lead"]: {
-        name: "Felix Gonzalez",
-        image: "/execPhotos/felix.png",
+        name: "n/a",
+        imageId: null,
         email: "mailto:alumni.shpe.iit@gmail.com",
-        linkedIn: "https://www.linkedin.com/in/felix-gonzalezz/",
-        major: "Electrical Engineering"
+        linkedIn: "",
+        major: ""
     },
     ["Internal Relations"]: {
         name: "Axel Aguilar Garcia",
-        image: null,
+        imageId: null,
         email: "",
         linkedIn: "https://www.linkedin.com/in/axel-aguilar-03401733a/",
         major: "Aerospace Engineering"
@@ -117,28 +117,28 @@ const internalTeam = {
 const externalTeam = {
     ["Professional Development Lead"]: {
         name: "Ivanova Benegas",
-        image: "/execPhotos/ivanova.jpg",
+        imageId: "1kcr8PPdnQVn1xShvTUi6dQ72W60LL89F",
         email: "mailto:pd.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/alejandra-ivanova-benegas-orantes-0a4579285/",
         major: "Biomedical Engineering"
     },
     ["Corporate Relations Lead"]: {
         name: "Christian Avilez",
-        image: "/execPhotos/christian.jpg",
+        imageId: "1eg-nRF92ZqSYT8E2r5_GdiT4KzkEBCt-",
         email: "mailto:corporate.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/christian-avilez/",
         major: "Electrical Engineering"
     },
     ["MentorSHPE Lead"]: {
         name: "Yslam Ismailov",
-        image: "/execPhotos/yslam.jpeg",
+        imageId: "1SQBi9LwX7jrNj4EXtGomYbsfPxxijqcD",
         email: "",
         linkedIn: "https://www.linkedin.com/in/yslami/",
         major: "Computer Science"
     },
     ["External Relations"]: {
         name: "n/a",
-        image: null,
+        imageId: null,
         email: "",
         linkedIn: "",
         major: "n/a"
@@ -148,38 +148,38 @@ const externalTeam = {
 const logisticsTeam = {
     ["Fundraising Lead"]: {
         name: "Jaime Bernardino",
-        image: "/execPhotos/jaime.jpg",
+        imageId: "11j0NxA35eIF3NWL3nyZy14yk1R_hvZVI",
         email: "mailto:fundraiser.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/jaime--bernardino/",
         major: "Computer Science"
     },
     ["Logistics Lead"]: {
         name: "Raul Diaz",
-        image: "/execPhotos/raul.jpg",
+        imageId: "1o1NH6mjuym79lqfOo1qIfiUeyZGaleqc",
         email: "mailto:coordinator.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/raul-diaz-02b2163b1/",
         major: "Aerospace Engineering"
     }
 };
 
-const academicTeam = {
+const academicsTeam = {
     ["Graduate Lead"]: {
         name: "Dara Mesta Gallegos",
-        image: "/execPhotos/dara.jpg",
+        imageId: "15290mSGMGyGXjQ9DGkxTlRjwVPzzYFiT",
         email: "mailto:Graduate.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/dara-mesta-gallegos/",
         major: "Civil Engineering"
     },
     ["Technical Lead"]: {
         name: "Salman Amir",
-        image: "/execPhotos/salman.png",
+        imageId: "1Ox8Sax6rdHjsVq62C_P8ZK5SPCYTU3rg",
         email: "mailto:Webmaster.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/salman--amir/",
         major: "Computer Science"
     },
     ["Academic Engagement Lead"]: {
         name: "Maksym Bereziuk",
-        image: "/execPhotos/maksym.png",
+        imageId: "1gWE9uVCuiukKHPAo1nlOUI903x2uyq78",
         email: "",
         linkedIn: "https://www.linkedin.com/in/maksym-bereziuk-418945358/",
         major: "Electrical and Computer Engineering"
@@ -189,28 +189,28 @@ const academicTeam = {
 const publicityTeam = {
     ["VP of Publicity"]: {
         name: "Isis Navarro",
-        image: "/execPhotos/isis.png",
+        imageId: "12yJ_8udDL_JVAM36RLuCHxaqs6jJzBQ3",
         email: "",
         linkedIn: "https://www.linkedin.com/in/isisxn/",
         major: "Information Technology and Management"
     },
     ["Media & Content Lead"]: {
         name: "n/a",
-        image: null,
+        imageId: null,
         email: "",
         linkedIn: "",
         major: "n/a"
     },
     ["Professional Media Lead"]: {
         name: "n/a",
-        image: null,
+        imageId: null,
         email: "",
         linkedIn: "",
         major: "n/a"
     },
     ["Marketing Lead"]: {
         name: "Sebastian Luque",
-        image: "/execPhotos/sebastian.jpg",
+        imageId: "1VfnY9FmfLptW-lvSD1FkUhvwakFoQuD_",
         email: "",
         linkedIn: "https://www.linkedin.com/in/sebastian-luque259/",
         major: "Computer Science"
@@ -220,28 +220,28 @@ const publicityTeam = {
 const shpetinasTeam = {
     ["Secretary"]: {
         name: "n/a",
-        image: null,
+        imageId: null,
         email: "",
         linkedIn: "",
         major: "n/a"
     },
     ["PR Chair"]: {
         name: "n/a",
-        image: null,
+        imageId: null,
         email: "",
         linkedIn: "",
         major: "n/a"
     },
     ["Membership Engagement"]: {
         name: "n/a",
-        image: null,
+        imageId: null,
         email: "",
         linkedIn: "",
         major: "n/a"
     },
     ["Professional Development Chair"]: {
         name: "n/a",
-        image: null,
+        imageId: null,
         email: "",
         linkedIn: "",
         major: "n/a"
@@ -251,21 +251,21 @@ const shpetinasTeam = {
 const outreachTeam = {
     ["SHPEjr Lead"]: {
         name: "Mariana Quintana Buquez",
-        image: "/execPhotos/mariana.jpeg",
+        imageId: "1o_l66ti02pMRKYExIZ4aVM6oIVoEJCEK",
         email: "mailto:ShpeJr.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/marianaquintana28",
         major: "Civil Engineering"
     },
     ["Noche de Ciencias Lead"]: {
         name: "Angel Castillo Campa",
-        image: "/execPhotos/angel.png",
+        imageId: "1eH8jo1rz3GeWXiP35ZM46brg3HXyVnmu",
         email: "",
         linkedIn: "https://www.linkedin.com/in/angel-castillo-campa-149944434/",
         major: "Aerospace Engineering"
     },
     ["Philanthropy Lead"]: {
         name: "Cesar Herrera",
-        image: "/execPhotos/cesar.png",
+        imageId: "1qq61AUiXxzz95UTLKiWTAKtfXlKY_43Y",
         email: "mailto:philanthropy.shpe.iit@gmail.com",
         linkedIn: "https://www.linkedin.com/in/cesar-herrera-361843216/",
         major: "Mechanical Engineering"
@@ -274,6 +274,18 @@ const outreachTeam = {
 
 
 function ExecutiveBoard() {
+    const sections = {
+        "Vice Presidents": vicePresidents,
+        "Directors": directors,
+        "Internal Team": internalTeam,
+        "External Team": externalTeam,
+        "Logistics Team": logisticsTeam,
+        "Academics Team": academicsTeam,
+        "Publicity Team": publicityTeam,
+        "SHPEtinas Team": shpetinasTeam,
+        "Outreach Team": outreachTeam
+    }
+    
     return (
         <div className="executiveBoard">
             <PageHeader title="Executive Board" subtitle="The Leaders of SHPE IIT" />
@@ -283,74 +295,23 @@ function ExecutiveBoard() {
                 <p>
                     The Executive Board of SHPE IIT is composed of dedicated student leaders who are committed to advancing the mission of the organization. Each member brings unique skills and perspectives, contributing to the overall success and growth of the chapter.
                 </p>
+
                 <CollapsibleSection text="President" defaultOpen={true}>
                     <div className="membersContainer">
-                        <ExecCard name={president.name} position={president.position} image={president.image} email={president.email} linkedIn={president.linkedIn} major={president.major} />
+                        <ExecCard name={president.name} position={president.position} imageId={president.imageId} email={president.email} linkedIn={president.linkedIn} major={president.major} />
                     </div>
                 </CollapsibleSection>
-                <CollapsibleSection text="Vice Presidents" defaultOpen={true}>
-                    <div className="membersContainer">
-                        {Object.entries(vicePresidents).map(([position, member]) => (
-                            <ExecCard key={position} name={member.name} position={position} image={member.image} email={member.email} linkedIn={member.linkedIn} major={member.major} />
-                        ))}
-                    </div>
-                </CollapsibleSection>
-                <CollapsibleSection text="Directors" defaultOpen={true}>
-                    <div className="membersContainer">
-                        {Object.entries(directors).map(([position, member]) => (
-                            <ExecCard key={position} name={member.name} position={position} image={member.image} email={member.email} linkedIn={member.linkedIn} major={member.major} />
-                        ))}
-                    </div>
-                </CollapsibleSection>
-                <CollapsibleSection text="Internal Team" defaultOpen={true}>
-                    <div className="membersContainer">
-                        {Object.entries(internalTeam).map(([position, member]) => (
-                            <ExecCard key={position} name={member.name} position={position} image={member.image} email={member.email} linkedIn={member.linkedIn} major={member.major} />
-                        ))}
-                    </div>
-                </CollapsibleSection>
-                <CollapsibleSection text="External Team" defaultOpen={true}>
-                    <div className="membersContainer">
-                        {Object.entries(externalTeam).map(([position, member]) => (
-                            <ExecCard key={position} name={member.name} position={position} image={member.image} email={member.email} linkedIn={member.linkedIn} major={member.major} />
-                        ))}
-                    </div>
-                </CollapsibleSection>
-                <CollapsibleSection text="Logistics Team" defaultOpen={true}>
-                    <div className="membersContainer">
-                        {Object.entries(logisticsTeam).map(([position, member]) => (
-                            <ExecCard key={position} name={member.name} position={position} image={member.image} email={member.email} linkedIn={member.linkedIn} major={member.major} />
-                        ))}
-                    </div>
-                </CollapsibleSection>
-                <CollapsibleSection text="Academic Team" defaultOpen={true}>
-                    <div className="membersContainer">
-                        {Object.entries(academicTeam).map(([position, member]) => (
-                            <ExecCard key={position} name={member.name} position={position} image={member.image} email={member.email} linkedIn={member.linkedIn} major={member.major} />
-                        ))}
-                    </div>
-                </CollapsibleSection>
-                <CollapsibleSection text="Publicity Team" defaultOpen={true}>
-                    <div className="membersContainer">
-                        {Object.entries(publicityTeam).map(([position, member]) => (
-                            <ExecCard key={position} name={member.name} position={position} image={member.image} email={member.email} linkedIn={member.linkedIn} major={member.major} />
-                        ))}
-                    </div>
-                </CollapsibleSection>
-                <CollapsibleSection text="SHPEtinas Team" defaultOpen={true}>
-                    <div className="membersContainer">
-                        {Object.entries(shpetinasTeam).map(([position, member]) => (
-                            <ExecCard key={position} name={member.name} position={position} image={member.image} email={member.email} linkedIn={member.linkedIn} major={member.major} />
-                        ))}
-                    </div>
-                </CollapsibleSection>
-                <CollapsibleSection text="Outreach Team" defaultOpen={true}>
-                    <div className="membersContainer">
-                        {Object.entries(outreachTeam).map(([position, member]) => (
-                            <ExecCard key={position} name={member.name} position={position} image={member.image} email={member.email} linkedIn={member.linkedIn} major={member.major} />
-                        ))}
-                    </div>
-                </CollapsibleSection>
+                {Object.entries(sections).map(([section, members]) => (
+                    <CollapsibleSection key={section} text={section} defaultOpen={true}>
+                        <div className="membersContainer">
+                            {(
+                                Object.entries(members).map(([position, member]) => (
+                                    <ExecCard key={position} name={member.name} position={position} imageId={member.imageId} email={member.email} linkedIn={member.linkedIn} major={member.major} />
+                                ))
+                            )}
+                        </div>
+                    </CollapsibleSection>
+                ))}
             </div>
         </div>
     );

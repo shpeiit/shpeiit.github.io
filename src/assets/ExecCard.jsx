@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import LinkElem from './LinkElem';
 import './ExecCard.css';
 
@@ -8,10 +9,28 @@ const placeholderImage = "/HeadshotPlaceholder.png";
 
 const emptyNameVals = ["", "n/a", "none", null, undefined];
 
-function ExecCard({ name, position, image, email, linkedIn, major }) {
-    if (!image) {
-        image = placeholderImage;
-    }
+function getImageUrl(imageId) {
+    if (!imageId) return {full: placeholderImage, lowres: null};
+    const full = `https://drive.google.com/thumbnail?id=${imageId}`; 
+    const lowres = `https://drive.google.com/thumbnail?id=${imageId}&sz=w100`;
+
+    useEffect(() => {
+        const img = new Image();
+        img.onload = () => {
+            if (img.complete && img.src === lowres) {
+                img.src = full;
+                img.onload = null; // remove the onload handler after preloading
+            }
+            // do nothing, just preloading the image
+        };
+        img.src = lowres;
+    }, [imageId]);
+
+    return {full, lowres};
+}
+
+function ExecCard({ name, position, imageId, email, linkedIn, major }) {
+    const image = getImageUrl(imageId);
 
     let classes = "execCard";
     if (emptyNameVals.includes(name?.toLowerCase())) {
@@ -24,7 +43,7 @@ function ExecCard({ name, position, image, email, linkedIn, major }) {
     return (
         <div className={classes}>
             <div className="imageContainer unselectable">
-                <img className='not-draggable' src={image} />
+                <img className='not-draggable' src={image.full} style={{backgroundImage: `url(${image.lowres})`}}  />
             </div>
             <h2>
                 {linkedIn && <LinkElem link={linkedIn} icon={linkedinIcon} iconLeft={false}>

@@ -127,8 +127,6 @@ function Home() {
                         <Carousel images={['/magmile.jpg', '/shpevolunteer.jpg']} />
                     </div>
                 </div>
-
-                <LinkElem link="https://www.shpe-iit.org/home">See more details at Old Website</LinkElem>
             </div>
         </div>
     )
