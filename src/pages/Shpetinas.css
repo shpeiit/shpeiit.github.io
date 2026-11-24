@@ -1,0 +1,25 @@
+
+.membersContainer {
+    display: flex;
+
+    flex-wrap: wrap;          /* fallback for older browsers */
+    flex-wrap: wrap balance;
+
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 0 1rem 1rem;
+
+    align-items: stretch;
+    flex-basis: 100%;
+
+    color: var(--font-color);
+
+    --col-count: 3;
+}
+
+.membersContainer > .execCard {
+    flex: 1 1 calc((100% / var(--col-count)) - 1rem);
+    /*max-width: calc((100% / var(--col-count)) - 1rem);*/
+    min-width: 200px;
+}
